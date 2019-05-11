@@ -13,7 +13,6 @@ baglanti = sqlite3.connect("Yurt.db")
 isaretci = baglanti.cursor()
 
 
-
 class Ogrenci():
 
     def __init__(self, ):
@@ -21,7 +20,7 @@ class Ogrenci():
 
     def YemekleriGoster(self):
 
-        isaretci.execute("SELECT * FROM Yemekler")
+        isaretci.execute("SELECT * FROM Yemekler ORDER BY Yemek_Tarih")
         veriler = isaretci.fetchall()
 
         for i in veriler:
@@ -29,13 +28,11 @@ class Ogrenci():
 
     def DuyurulariGoster(self):
 
-        isaretci.execute("SELECT * FROM Duyurular")
+        isaretci.execute("SELECT * FROM Duyurular ORDER BY Duyuru_Tarih")
         veriler = isaretci.fetchall()
 
         for i in veriler:
             print(i)
-
-
 
     def ArayuzOgrenci(self):
 
@@ -394,9 +391,9 @@ class Yurt():
 
 
     def Istatistikler(self):
-        secim = input("1-Öğrencilerin yaş grafiğini göster\n"
+        secim = int(input("1-Öğrencilerin yaş grafiğini göster\n"
                       "2-Öğrencilerin geldiği şehirlerin grafiğini göster\n"
-                      "3-Toplam kazanç / zarar grafiğini göster\nSeçim yapınız:")
+                      "3-Toplam kazanç / zarar grafiğini göster\nSeçim yapınız:"))
         if secim == 1:
             GrafikIslemleri.Grafik_Yas()
 
@@ -429,8 +426,8 @@ class Yurt():
 
     def DuyuruIslemleri(self):
 
-        secim = input("1-Duyuru Ekle\n"
-                      "2-Duyuru Sil\nSeçiniz:")
+        secim = int(input("1-Duyuru Ekle\n"
+                      "2-Duyuru Sil\nSeçiniz:"))
 
         if secim == 1:
 
@@ -453,7 +450,7 @@ class Yurt():
 
             kacinci = int(input("Kaçıncı duyuruyu silmek istiyorsunuz:"))
 
-            isaretci.execute("DELETE FROM Duyurular WHERE ROWID = ? ".format(kacinci))
+            isaretci.execute("DELETE FROM Duyurular WHERE ROWID = {} ".format(kacinci))
 
     def ArayuzYurt(self):
 
@@ -495,11 +492,11 @@ elif secimGiris == 2:
             ogrenci1.ArayuzOgrenci()
             secim1 = int(input("Yapmak istediğiniz işlemi seçiniz:"))
 
-            if secim1 == 1:
+            if secim1 == 3:
                 ogrenci1.YemekleriGoster()
 
-
-
+            elif secim1 == 4:
+	            ogrenci1.DuyurulariGoster()
 
 elif secimGiris == 3:
 
