@@ -90,11 +90,11 @@ class Yurt():
                 bolum = input("{}. Öğrenci için Bölüm:".format(sayac, self.bolum))
                 telefon = input("{}. Ögrenci için Telefon Numarası(Örn:537..):".format(sayac, self.telefonno))
 
-                isaretci.execute("SELECT OdaSlotu1, OdaSlotu2, OdaSlotu3 FROM bilgileryurt")
+                """isaretci.execute("SELECT OdaSlotu1, OdaSlotu2, OdaSlotu3 FROM bilgileryurt")
                 veriler = isaretci.fetchone()
 
                 for i in veriler:
-                    print(i)
+                    print(i)"""
 
                 nakit = input("Toplam tutar nakit mi ödenecek?(E/H):")
 
