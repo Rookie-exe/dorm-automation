@@ -16,9 +16,8 @@ isaretci = baglanti.cursor()
 
 class Ogrenci():
 
-    def __init__(self, durum):
-        self.durum = durum
-
+    def __init__(self, ):
+        pass
 
     def YemekleriGoster(self):
 
@@ -28,20 +27,29 @@ class Ogrenci():
         for i in veriler:
             print(i)
 
+    def DuyurulariGoster(self):
+
+        isaretci.execute("SELECT * FROM Duyurular")
+        veriler = isaretci.fetchall()
+
+        for i in veriler:
+            print(i)
+
+
 
     def ArayuzOgrenci(self):
 
         print("""
-                    Yurt Aktiflik Durumu:{}
-                
+                    
                     İşlemler
                     
                     1-Bilgilerim
                     2-Karta para yükle
                     3-Yemekleri göster
-                    4-Uygulamayı kapat 
+                    4-Duyuruları göster
+                    5-Uygulamayı kapat 
                    
-        """.format(self.durum))
+        """)
 
 class Yurt():
 
@@ -291,6 +299,8 @@ class Yurt():
 
     def OgrenciBilgiGuncelle(self):
 
+        """yurt1.OgrenciEkle()"""
+
         isaretci.execute("select * from bilgilerogrenci")
         veriler = isaretci.fetchall()
         sayac = 0
@@ -354,7 +364,7 @@ class Yurt():
         self.cift_fiyat = int(input("Çift kişilik odanızın fiyatını giriniz:"))
         self.uc_fiyat = int(input("Üç kişilik odanızın fiyatını giriniz:"))
 
-        if self.tek_fiyat or self.cift_fiyat or self.uc_fiyat == 0:
+        if self.tek_fiyat == 0 or self.cift_fiyat == 0 or self.uc_fiyat == 0:
             self.tek_fiyat, self.cift_fiyat, self.uc_fiyat = 1, 1, 1
 
         ############################################################################
@@ -414,8 +424,36 @@ class Yurt():
             isaretci.execute("INSERT INTO Yemekler values('{}' ,'{}', '{}', '{}', '{}')".format(yemek_Tarih, yemek_Corba,
                                                                                               yemek_Ana, yemek_Ana2,
                                                                                               yemek_Ek))
-
         baglanti.commit()
+
+
+    def DuyuruIslemleri(self):
+
+        secim = input("1-Duyuru Ekle\n"
+                      "2-Duyuru Sil\nSeçiniz:")
+
+        if secim == 1:
+
+            isaretci.execute("CREATE TABLE IF NOT EXISTS Duyurular(Duyuru_Tarih TEXT, Duyuru TEXT)")
+            duyuru_Tarih = datetime.datetime.now()
+            duyuru = input("Duyuruyu giriniz:")
+
+            isaretci.execute("INSERT INTO Duyurular values('{}', '{}')".format(duyuru_Tarih, duyuru))
+
+            baglanti.commit()
+
+        elif secim == 2:
+
+            isaretci.execute("SELECT * FROM Duyurular")
+            veriler = isaretci.fetchall()
+            sayac = 0
+
+            for i in veriler:
+                print("{}. Duyuru: {}".format(sayac+1, i))
+
+            kacinci = int(input("Kaçıncı duyuruyu silmek istiyorsunuz:"))
+
+            isaretci.execute("DELETE FROM Duyurular WHERE ROWID = ? ".format(kacinci))
 
     def ArayuzYurt(self):
 
@@ -431,13 +469,11 @@ class Yurt():
                             7-Yemek bilgisi girişi
                             8-Yurt bilgileri 
                             9-Yurt istatistikleri 
-                            10-Veritabanı işlemleri
-                            11-Uygulamayı kapat 
-                                
+                            10-Duyuru işlemleri
+                            11-Uygulamayı kapat                       
                 """)
 
-
-ogrenci1 = Ogrenci(durum="")
+ogrenci1 = Ogrenci()
 yurt1 = Yurt()
 
 
@@ -506,7 +542,7 @@ elif secimGiris == 3:
                 yurt1.Istatistikler()
 
             elif secim1 == 10:
-                pass
+                yurt1.DuyuruIslemleri()
 
             elif secim1 == 11:
                 exit()
