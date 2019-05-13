@@ -1,5 +1,5 @@
 import sqlite3
-from KullaniciGirisi import YetkiliKullaniciOlustur, OgrenciKullaniciOlustur, YetkiliGiris, OgrenciGiris
+from KullaniciGirisi import YetkiliKaydiOlustur, OgrenciKaydiOlustur, YetkiliGiris, OgrenciGiris
 from veritabaniQT5 import Ui_MainWindow
 from PencereIslemleri import *
 import datetime
@@ -477,15 +477,15 @@ secimGiris = int(input("1-Yeni Kullanıcı Oluştur\n2-Öğrenci girişi yap\n3-
 
 if secimGiris == 1:
 
-    secim = int(input("1-Yetkili Kullanıcı Oluştur\n2-Öğrenci kullanıcı oluştur\nSeçiniz:"))
+    secim = int(input("1-Yetkili kaydı yap\n2-Öğrenci kaydı yap\nSeçiniz:"))
 
     if secim == 1:
-        YetkiliKullaniciOlustur()
+        YetkiliKaydiOlustur()
         yurt1.YurtBilgisiGiris()
         yurt1.ArayuzYurt()
 
     elif secim == 2:
-        OgrenciKullaniciOlustur()
+        OgrenciKaydiOlustur()
         ogrenci1.ArayuzOgrenci()
 
 

@@ -8,7 +8,7 @@ isaretci.execute("create table if not exists ogrenciler(ad TEXT,soyad TEXT,kulla
 baglanti.commit()
 global kullaniciadi
 
-def YetkiliKullaniciOlustur():
+def YetkiliKaydiOlustur():
 
     bulundu = 0
     dogrulama = int(input("Size özel verilen BeniOku.txt dosyasındaki doğrulama kodunu giriniz:"))
@@ -52,7 +52,7 @@ def YetkiliKullaniciOlustur():
         exit()
 
 
-def OgrenciKullaniciOlustur():
+def OgrenciKaydiOlustur():
     bulundu = 0
 
     while bulundu == 0:
