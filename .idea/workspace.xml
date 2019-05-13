@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/YurtOtomasyonu.py" line="497" />
+    <bookmark url="file://$PROJECT_DIR$/YurtOtomasyonu.py" line="505" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="866e1d02-2abd-47bc-b24a-fe05901aa7b2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/YurtOtomasyonu.py" beforeDir="false" afterPath="$PROJECT_DIR$/YurtOtomasyonu.py" afterDir="false" />
-    </list>
+    <list default="true" id="866e1d02-2abd-47bc-b24a-fe05901aa7b2" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,8 +20,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/YurtOtomasyonu.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-188">
-              <caret line="97" lean-forward="true" selection-start-line="97" selection-end-line="97" />
+            <state relative-caret-position="136">
+              <caret line="477" lean-forward="true" selection-start-line="477" selection-end-line="477" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
               </folding>
@@ -33,22 +30,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/BeniOku.txt">
+        <entry file="file://$PROJECT_DIR$/KullaniciGirisi.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="23" selection-start-column="15" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/GrafikIslemleri.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="28" column="8" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="8" />
-              <folding>
-                <element signature="e#0#31#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="306">
+              <caret line="54" column="11" selection-start-line="54" selection-start-column="4" selection-end-line="54" selection-end-column="11" />
             </state>
           </provider>
         </entry>
@@ -64,7 +49,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>PencereOrtala</find>
       <find>Pencere</find>
       <find>quit</find>
       <find>lineEdit</find>
@@ -80,7 +64,6 @@
       <find>insert into</find>
       <find>OgrenciEkle</find>
       <find>bilgileryurt</find>
-      <find>OdaSlotu</find>
       <find>OdaSlotu3Fiyat</find>
       <find>odasecim</find>
       <find>Yurt</find>
@@ -94,6 +77,8 @@
       <find>ROWID</find>
       <find>delete</find>
       <find>Yemek</find>
+      <find>OdaSlotu</find>
+      <find>Tek kiş</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -112,8 +97,8 @@
         <option value="$PROJECT_DIR$/EmailGonder.py" />
         <option value="$PROJECT_DIR$/veritabaniQT5.py" />
         <option value="$PROJECT_DIR$/girisekrani.py" />
-        <option value="$PROJECT_DIR$/KullaniciGirisi.py" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/KullaniciGirisi.py" />
         <option value="$PROJECT_DIR$/YurtOtomasyonu.py" />
       </list>
     </option>
@@ -335,7 +320,21 @@
       <option name="project" value="LOCAL" />
       <updated>1557581143657</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary=".">
+      <created>1557589885411</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1557589885411</updated>
+    </task>
+    <task id="LOCAL-00007" summary=".">
+      <created>1557590751090</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1557590751090</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -354,12 +353,12 @@
     <frame x="-4" y="-4" width="1928" height="1044" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49421486" visible="true" weight="0.15113218" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49421486" visible="true" weight="0.15113218" />
       <window_info id="Structure" order="1" sideWeight="0.5057851" side_tool="true" weight="0.25961033" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32937366" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4997367" visible="true" weight="0.31425485" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4997367" weight="0.31425485" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39956802" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -447,35 +446,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/KullaniciGirisi.py">
+    <entry file="file://$PROJECT_DIR$/Yurt.db-journal" />
+    <entry file="file://$PROJECT_DIR$/BeniOku.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="143" selection-start-line="143" selection-end-line="143" />
+        <state>
+          <caret column="15" lean-forward="true" selection-start-column="15" selection-end-column="15" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Yurt.db-journal" />
     <entry file="file://$PROJECT_DIR$/GrafikIslemleri.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="28" column="8" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="8" />
+        <state relative-caret-position="79">
+          <caret line="30" column="22" lean-forward="true" selection-start-line="30" selection-start-column="22" selection-end-line="30" selection-end-column="22" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/BeniOku.txt">
+    <entry file="file://$PROJECT_DIR$/KullaniciGirisi.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="23" selection-start-column="15" selection-end-column="23" />
+        <state relative-caret-position="306">
+          <caret line="54" column="11" selection-start-line="54" selection-start-column="4" selection-end-line="54" selection-end-column="11" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/YurtOtomasyonu.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-188">
-          <caret line="97" lean-forward="true" selection-start-line="97" selection-end-line="97" />
+        <state relative-caret-position="136">
+          <caret line="477" lean-forward="true" selection-start-line="477" selection-end-line="477" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
           </folding>

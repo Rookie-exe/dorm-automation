@@ -296,8 +296,6 @@ class Yurt():
 
     def OgrenciBilgiGuncelle(self):
 
-        """yurt1.OgrenciEkle()"""
-
         isaretci.execute("select * from bilgilerogrenci")
         veriler = isaretci.fetchall()
         sayac = 0
@@ -336,7 +334,8 @@ class Yurt():
         simdi = datetime.datetime.now()
         kayittarih = simdi.strftime("%d/%m/%Y")
 
-        isaretci.execute("UPDATE bilgilerogrenci SET ad = '{}', soyad = '{}', yas = {}, TCNO = {}, okul = '{}', bolum = '{}', telefon = {}, KalanTutar = {}, sehir = '{}', kayittarih = '{}'  WHERE ROWID = {}"
+        isaretci.execute("UPDATE bilgilerogrenci SET ad = '{}', soyad = '{}', yas = {}, TCNO = {}, okul = '{}', "
+                         "bolum = '{}', telefon = {}, KalanTutar = {}, sehir = '{}', kayittarih = '{}'  WHERE ROWID = {}"
                          .format(ad, soyad, yas, tcNo, okul, bolum, telefon, self.KalanTutar, sehir, kayittarih, secim))
 
         baglanti.commit() #Güncellemeyi gerçekleştirmek için commit ettik
