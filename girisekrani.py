@@ -1,3 +1,8 @@
+# Todo
+#Yetkili kullanıcı girişi(kaydı) ve Öğrenci girişi(kaydı) adlı iki fonksiyon oluştur
+#Eğer yetkili girişi yapılacaksa özel kod istensin
+
+
 from tkinter import *
 from tkinter import messagebox as ms
 import sqlite3
@@ -40,7 +45,7 @@ class Kullanicilar:
         if result:
             self.logf.pack_forget()
 
-            self.head['text'] = 'Hoşgeldiniz  ' + self.ad.get()
+            self.head['text'] = 'Hoşgeldiniz  ' + self.kullaniciadi.get()
             self.head['pady'] = 150
         else:
             ms.showerror('Hata', 'Kullanıcı adı bulunamadı')
@@ -51,18 +56,16 @@ class Kullanicilar:
             isaretci = db.cursor()
 
         # Kullanıcı adı kontrol etme işlemi
-        find_user = ('SELECT * FROM yetkililer WHERE kullaniciadi = ?')
-        isaretci.execute(find_user, [(self.kullaniciadi.get())])
+        k_bul = ('SELECT * FROM yetkililer WHERE kullaniciadi = ?')
+        isaretci.execute(k_bul, [(self.yeni_kullaniciadi.get())])
         if isaretci.fetchall():
-            ms.showerror('Hata!' ,'Kullanıcı adı kullanılıyor')
-
+            ms.showerror('Hata!', 'Kullanıcı adı kullanılıyor')
         else:
             ms.showinfo('Başarılı', 'Kullanıcı oluşturuldu.')
             self.GirisEkrani()
-        # Create New Account
-        insert = 'INSERT INTO yetkililer(ad, soyad, kullaniciadi, sifre) VALUES(?,?,?,?)'
-        isaretci.execute(insert, [(self.ad.get()), (self.soyad.get()), (self.yeni_kullaniciadi.get()),
-                                  (self.yeni_sifre.get())])
+            insert = 'INSERT INTO yetkililer(ad, soyad, kullaniciadi, sifre) VALUES(?,?,?,?)'
+            isaretci.execute(insert, [(self.ad.get()), (self.soyad.get()), (self.yeni_kullaniciadi.get()),
+                                      (self.yeni_sifre.get())])
         db.commit()
 
     def GirisEkrani(self):
@@ -114,9 +117,8 @@ class Kullanicilar:
 
 
 
-# create window and application object
+
 root = Tk()
-# root.title("Login Form")
 Kullanicilar(root)
 root.mainloop()
 
