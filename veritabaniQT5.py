@@ -18,6 +18,12 @@ class Ui_MainWindow(object):
                 self.tableWidget.setItem(satir_sayisi, sutun_sayisi, QtWidgets.QTableWidgetItem(str(veri)))
         baglanti.close()
 
+
+    def ButtonAyari(self):
+        self.btn_goster.setEnabled(False)
+
+
+
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(800, 600)
@@ -33,6 +39,7 @@ class Ui_MainWindow(object):
         self.btn_goster.setObjectName("btn_goster")
 
         self.btn_goster.clicked.connect(self.Veritabani_Goster)
+        self.btn_goster.clicked(self.ButtonAyari())
 
         basliklar = ["AD", "SOYAD", "YAŞ", "TC_NO", "OKUL", "BÖLÜM", "TEL_NO", "AYLIK_ODENEN", "ŞEHİR", "KAYIT_TARİHİ"]
         self.tableWidget.setHorizontalHeaderLabels(basliklar)

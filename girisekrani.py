@@ -1,181 +1,123 @@
-# -*- coding: utf-8 -*-
-
-# Form implementation generated from reading ui file 'girisekrani.ui'
-#
-# Created by: PyQt5 UI code generator 5.12
-#
-# WARNING! All changes made in this file will be lost!
-
-from PyQt5 import QtCore, QtGui, QtWidgets
+from tkinter import *
+from tkinter import messagebox as ms
 import sqlite3
-from PencereIslemleri import *
+
+with sqlite3.connect('Yurt.db') as db:
+    isaretci = db.cursor()
+
+isaretci.execute("create table if not exists yetkililer(ad TEXT,soyad TEXT,kullaniciadi TEXT, sifre TEXT)") # Yetkili Tablosu olusturma
+isaretci.execute("create table if not exists ogrenciler(ad TEXT,soyad TEXT,kullaniciadi TEXT, sifre TEXT)") # Öğrenci Tablosu olusturma
+db.commit()
+db.close()
 
 
-class Ui_GirisEkrani(object):
+# Kullanıcılar sınıfı
 
-    def __init__(self):
-        pass
+class Kullanicilar:
+    def __init__(self, master):
 
-    def giris(self):
+        self.master = master
 
-        kullanici_adi = self.lineEdit.text()
-        sifre = self.lineEdit_2.text()
+        self.ad = StringVar()
+        self.soyad = StringVar()
+        self.kullaniciadi = StringVar()
+        self.sifre = StringVar()
+        self.yeni_kullaniciadi = StringVar()
+        self.yeni_sifre = StringVar()
 
-        baglanti = sqlite3.connect("Yurt.db")
-        sonuc = baglanti.execute("SELECT * FROM kullanicilar2 WHERE kullaniciadi = ? AND sifre = ?", (kullanici_adi, sifre))
-        baglanti.commit()
+        self.Arayuz()
 
-        if(len(sonuc.fetchall()) > 0 ):
-            print("Giriş yapıldı!")
-            Pencere_Basarili()
-            QtWidgets.qApp.closeAllWindows()
+    # Giriş fonksiyonu
+    def GirisYap(self):
+
+        with sqlite3.connect('Yurt.db') as db:
+            isaretci = db.cursor()
+
+        # Kullanıcı bulma işlemi
+        find_user = ('SELECT * FROM yetkililer WHERE kullaniciadi = ? and sifre = ?')
+        isaretci.execute(find_user ,[(self.kullaniciadi.get()), (self.sifre.get())])
+        result = isaretci.fetchall()
+        if result:
+            self.logf.pack_forget()
+
+            self.head['text'] = 'Hoşgeldiniz  ' + self.ad.get()
+            self.head['pady'] = 150
+        else:
+            ms.showerror('Hata', 'Kullanıcı adı bulunamadı')
+
+    def YetkiliKaydiOlustur(self):
+
+        with sqlite3.connect('Yurt.db') as db:
+            isaretci = db.cursor()
+
+        # Kullanıcı adı kontrol etme işlemi
+        find_user = ('SELECT * FROM yetkililer WHERE kullaniciadi = ?')
+        isaretci.execute(find_user, [(self.kullaniciadi.get())])
+        if isaretci.fetchall():
+            ms.showerror('Hata!' ,'Kullanıcı adı kullanılıyor')
 
         else:
-            print("Kullanıcı bulunamadı!\nTekrar deneyiniz")
-            Pencere_Basarisiz()
-            return False
+            ms.showinfo('Başarılı', 'Kullanıcı oluşturuldu.')
+            self.GirisEkrani()
+        # Create New Account
+        insert = 'INSERT INTO yetkililer(ad, soyad, kullaniciadi, sifre) VALUES(?,?,?,?)'
+        isaretci.execute(insert, [(self.ad.get()), (self.soyad.get()), (self.yeni_kullaniciadi.get()),
+                                  (self.yeni_sifre.get())])
+        db.commit()
+
+    def GirisEkrani(self):
+        self.kullaniciadi.set('')
+        self.sifre.set('')
+        self.kayit.pack_forget()
+        self.head['text'] = 'Giriş'
+        self.logf.pack()
+    def KayitEkrani(self):
+        self.ad.set('')
+        self.soyad.set('')
+        self.yeni_kullaniciadi.set('')
+        self.yeni_sifre.set('')
+        self.logf.pack_forget()
+        self.head['text'] = 'Kayıt'
+        self.kayit.pack()
+
+    # Arayüz fonksiyonu
+    def Arayuz(self):
+        self.head = Label(self.master ,text = 'Giriş' ,font = ('', 35), pady = 10)
+        self.head.pack()
+        self.logf = Frame(self.master, padx=10, pady=10)
+
+
+        Label(self.logf ,text = 'Kullanıcı adı: ' ,font = ('' ,20) ,pady=5 ,padx=5).grid(sticky = W)
+        Entry(self.logf ,textvariable = self.kullaniciadi ,bd = 5 ,font = ('' ,15)).grid(row=0 ,column=1)
+        Label(self.logf ,text = 'Şifre: ' ,font = ('' ,20) ,pady=5 ,padx=5).grid(sticky = W)
+        Entry(self.logf ,textvariable = self.sifre ,bd = 5 ,font = ('' ,15) ,show = '*').grid(row=1 ,column=1)
+        Button(self.logf ,text = ' Giriş yap ' ,bd = 3 ,font=('', 15), padx=5, pady=5, command=self.GirisYap).grid()
+        Button(self.logf, text=' Kayıt yap ', bd=3, font=('', 15), padx=5, pady=5, command=self.KayitEkrani).grid(row=2,
+                                                                                                              column=1)
+        self.logf.pack()
+
+        self.kayit = Frame(self.master, padx=10, pady=10)
+
+        Label(self.kayit, text='Ad: ', font=('', 20), pady=5, padx=5).grid(sticky=W)
+        Entry(self.kayit, textvariable=self.ad, bd=5, font=('', 15)).grid(row=0, column=1)
+
+        Label(self.kayit, text='Soyad: ', font=('', 20), pady=5, padx=5).grid(sticky=W)
+        Entry(self.kayit, textvariable=self.soyad, bd=5, font=('', 15)).grid(row=1, column=1)
+        Label(self.kayit, text='Kullanıcı adı: ', font=('', 20), pady=5, padx=5).grid(sticky=W)
+        Entry(self.kayit, textvariable=self.yeni_kullaniciadi, bd=5, font=('', 15)).grid(row=2, column=1)
+        Label(self.kayit, text='Şifre: ', font=('', 20), pady=5, padx=5).grid(sticky=W)
+        Entry(self.kayit, textvariable=self.yeni_sifre, bd=5, font=('', 15), show='*').grid(row=3, column=1)
+
+        Button(self.kayit, text='Kayıt yap', bd=3, font=('', 15), padx=5, pady=5, command=self.YetkiliKaydiOlustur).grid()
+        Button(self.kayit, text='Giriş yap', bd=3, font=('', 15), padx=5, pady=5, command=self.GirisEkrani).grid(row=4,
+                                                                                                         column=1)
 
 
 
-    def setupUi(self, GirisEkrani):
-        GirisEkrani.setObjectName("GirisEkrani")
-        GirisEkrani.resize(865, 600)
-        font = QtGui.QFont()
-        font.setItalic(False)
-        GirisEkrani.setFont(font)
-        GirisEkrani.setCursor(QtGui.QCursor(QtCore.Qt.ArrowCursor))
-        GirisEkrani.setMouseTracking(False)
-        GirisEkrani.setAutoFillBackground(False)
-        GirisEkrani.setStyleSheet("background-color: rgb(89, 170, 132);")
-        GirisEkrani.setTabShape(QtWidgets.QTabWidget.Rounded)
-        GirisEkrani.setDockNestingEnabled(False)
-        self.centralwidget = QtWidgets.QWidget(GirisEkrani)
-        self.centralwidget.setObjectName("centralwidget")
-        self.label = QtWidgets.QLabel(self.centralwidget)
-        self.label.setGeometry(QtCore.QRect(270, 160, 131, 31))
-        font = QtGui.QFont()
-        font.setPointSize(14)
-        font.setBold(True)
-        font.setItalic(False)
-        font.setUnderline(True)
-        font.setWeight(75)
-        font.setStrikeOut(False)
-        self.label.setFont(font)
-        self.label.setStyleSheet("color: rgb(255, 255, 255);")
-        self.label.setObjectName("label")
-        self.label_2 = QtWidgets.QLabel(self.centralwidget)
-        self.label_2.setGeometry(QtCore.QRect(270, 220, 121, 31))
-        font = QtGui.QFont()
-        font.setPointSize(14)
-        font.setBold(True)
-        font.setUnderline(True)
-        font.setWeight(75)
-        self.label_2.setFont(font)
-        self.label_2.setStyleSheet("color: rgb(255, 255, 255)")
-        self.label_2.setObjectName("label_2")
-        self.lineEdit = QtWidgets.QLineEdit(self.centralwidget)
-        self.lineEdit.setEnabled(True)
-        self.lineEdit.setGeometry(QtCore.QRect(430, 160, 141, 31))
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Fixed)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.lineEdit.sizePolicy().hasHeightForWidth())
-        self.lineEdit.setSizePolicy(sizePolicy)
-        font = QtGui.QFont()
-        font.setPointSize(10)
-        self.lineEdit.setFont(font)
-        self.lineEdit.setStyleSheet("background-color: rgb(85, 85, 0);\n"
-"background-color: rgb(170, 85, 0);\n"
-"color: rgb(255, 255, 255);")
-        self.lineEdit.setText("")
-        self.lineEdit.setPlaceholderText("Kullanıcı adınız...")
-        self.lineEdit.setCursorMoveStyle(QtCore.Qt.LogicalMoveStyle)
-        self.lineEdit.setClearButtonEnabled(False)
-        self.lineEdit.setObjectName("lineEdit")
-        self.lineEdit_2 = QtWidgets.QLineEdit(self.centralwidget)
-        self.lineEdit_2.setGeometry(QtCore.QRect(430, 220, 141, 31))
-        font = QtGui.QFont()
-        font.setPointSize(10)
-        self.lineEdit_2.setFont(font)
-        self.lineEdit_2.setStyleSheet("color: rgb(255, 255, 255);\n"
-"border-color: rgb(255, 170, 0);\n"
-"background-color: rgb(170, 85, 0);\n"
-"")
-        self.lineEdit_2.setText("")
-        self.lineEdit_2.setObjectName("lineEdit_2")
-        self.lineEdit_2.setEchoMode(QtWidgets.QLineEdit.Password)
-        self.pushButton = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton.setGeometry(QtCore.QRect(370, 300, 111, 61))
-        self.pushButton.clicked.connect(self.giris)
-        font = QtGui.QFont()
-        font.setFamily("Nyala")
-        font.setPointSize(20)
-        font.setBold(True)
-        font.setWeight(75)
-        self.pushButton.setFont(font)
-        self.pushButton.setStyleSheet("color: rgb(255, 255, 255)")
-        self.pushButton.setObjectName("pushButton")
-        self.dateTimeEdit = QtWidgets.QDateTimeEdit(self.centralwidget)
-        self.dateTimeEdit.setGeometry(QtCore.QRect(650, 540, 194, 22))
-        self.dateTimeEdit.setObjectName("dateTimeEdit")
-        self.calendarWidget = QtWidgets.QCalendarWidget(self.centralwidget)
-        self.calendarWidget.setGeometry(QtCore.QRect(247, 390, 371, 181))
-        self.calendarWidget.setStyleSheet("color: rgb(0, 0, 0);")
-        self.calendarWidget.setObjectName("calendarWidget")
-        self.lineEdit.raise_()
-        self.label.raise_()
-        self.label_2.raise_()
-        self.lineEdit_2.raise_()
-        self.pushButton.raise_()
-        self.dateTimeEdit.raise_()
-        self.calendarWidget.raise_()
-        GirisEkrani.setCentralWidget(self.centralwidget)
-        self.statusbar = QtWidgets.QStatusBar(GirisEkrani)
-        self.statusbar.setObjectName("statusbar")
-        GirisEkrani.setStatusBar(self.statusbar)
-
-        self.retranslateUi(GirisEkrani)
-        QtCore.QMetaObject.connectSlotsByName(GirisEkrani)
-
-    def retranslateUi(self, GirisEkrani):
-        _translate = QtCore.QCoreApplication.translate
-        GirisEkrani.setWindowTitle(_translate("GirisEkrani", "Giriş Ekranı"))
-        self.label.setText(_translate("GirisEkrani", "Kullanıcı adı:"))
-        self.label_2.setText(_translate("GirisEkrani", "Şifre:"))
-        self.lineEdit.setWhatsThis(_translate("GirisEkrani", "<html><head/><body><p>Kullanıcı adı girişi</p></body></html>"))
-        self.lineEdit_2.setWhatsThis(_translate("GirisEkrani", "<html><head/><body><p>Şifre girişi</p></body></html>"))
-        self.pushButton.setText(_translate("GirisEkrani", "Giriş yap"))
-
-
-"""def Calistir():
-    if __name__ == "__main__":
-        import sys
-
-        uygulama = QtWidgets.QApplication(sys.argv)
-        MainWindow = QtWidgets.QMainWindow()
-        ekran = Ui_GirisEkrani()
-        ekran.setupUi(MainWindow)
-        MainWindow.show()
-        print("Giriş ekranı Açıldı")
-        uygulama.exec_()
-
-        if girisekrani.giris():
-            QtWidgets.qApp.closeAllWindows()
-
-
-
-
-girisekrani = Ui_GirisEkrani()"""
-
-
-
-
-
-
-
-
-
-
-
+# create window and application object
+root = Tk()
+# root.title("Login Form")
+Kullanicilar(root)
+root.mainloop()
 
 

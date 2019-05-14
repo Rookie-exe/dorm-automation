@@ -5,8 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="866e1d02-2abd-47bc-b24a-fe05901aa7b2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/KullaniciGirisi.py" beforeDir="false" afterPath="$PROJECT_DIR$/KullaniciGirisi.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/YurtOtomasyonu.py" beforeDir="false" afterPath="$PROJECT_DIR$/YurtOtomasyonu.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Yurt.db" beforeDir="false" afterPath="$PROJECT_DIR$/Yurt.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/girisekrani.py" beforeDir="false" afterPath="$PROJECT_DIR$/girisekrani.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/girisekrani.ui" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/veritabaniQT5.py" beforeDir="false" afterPath="$PROJECT_DIR$/veritabaniQT5.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,19 +24,13 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/YurtOtomasyonu.py">
+        <entry file="file://$PROJECT_DIR$/girisekrani.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="68" selection-start-line="1" selection-start-column="68" selection-end-line="1" selection-end-column="68" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/KullaniciGirisi.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="17" lean-forward="true" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+            <state relative-caret-position="271">
+              <caret line="100" column="78" selection-start-line="100" selection-start-column="78" selection-end-line="100" selection-end-column="78" />
+              <folding>
+                <element signature="e#1#22#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -49,19 +46,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>lineEdit</find>
-      <find>Ui_Main</find>
-      <find>setupUi</find>
-      <find>connect</find>
-      <find>BilgilerOGrenci</find>
-      <find>kullanicilar2</find>
-      <find>BilgilerOgrenci</find>
-      <find>Yatak sayı</find>
-      <find>Filtrele</find>
-      <find>tarih</find>
-      <find>insert into</find>
-      <find>OgrenciEkle</find>
-      <find>bilgileryurt</find>
       <find>OdaSlotu3Fiyat</find>
       <find>odasecim</find>
       <find>Yurt</find>
@@ -79,6 +63,19 @@
       <find>Tek kiş</find>
       <find>Guncelle</find>
       <find>Kullanıcı</find>
+      <find>Button</find>
+      <find>quit.db</find>
+      <find>Create</find>
+      <find>Kayıt yap</find>
+      <find>crf</find>
+      <find>log</find>
+      <find>n_</find>
+      <find>c</find>
+      <find>login</find>
+      <find>main</find>
+      <find>cr</find>
+      <find>logf</find>
+      <find>widgets</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -95,11 +92,11 @@
         <option value="$PROJECT_DIR$/OgrenciEkle.py" />
         <option value="$PROJECT_DIR$/GrafikIslemleri.py" />
         <option value="$PROJECT_DIR$/EmailGonder.py" />
-        <option value="$PROJECT_DIR$/veritabaniQT5.py" />
-        <option value="$PROJECT_DIR$/girisekrani.py" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/KullaniciGirisi.py" />
         <option value="$PROJECT_DIR$/YurtOtomasyonu.py" />
+        <option value="$PROJECT_DIR$/veritabaniQT5.py" />
+        <option value="$PROJECT_DIR$/girisekrani.py" />
       </list>
     </option>
   </component>
@@ -115,7 +112,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -127,6 +123,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -154,7 +151,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.YurtOtomasyonu">
+  <component name="RunManager" selected="Python.girisekrani">
     <configuration name="KullaniciGirisi" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="YurtOtomasyonu" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -240,7 +237,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="ogrencieklemekrani" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="girisekrani" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="YurtOtomasyonu" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -252,7 +249,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ogrencieklemekrani.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/girisekrani.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -263,11 +260,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.girisekrani" />
         <item itemvalue="Python.YurtOtomasyonu" />
         <item itemvalue="Python.KullaniciGirisi" />
         <item itemvalue="Python.OgrenciEkle" />
         <item itemvalue="Python.OgrenciEklemeEkrani" />
-        <item itemvalue="Python.ogrencieklemekrani" />
       </list>
     </recent_temporary>
   </component>
@@ -341,7 +338,14 @@
       <option name="project" value="LOCAL" />
       <updated>1557781546511</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="updated">
+      <created>1557781773696</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1557781773696</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -391,7 +395,8 @@
     <MESSAGE value="kod eklendi" />
     <MESSAGE value="." />
     <MESSAGE value="update" />
-    <option name="LAST_COMMIT_MESSAGE" value="update" />
+    <MESSAGE value="updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Kullanici.db" />
@@ -424,26 +429,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/veritabaniQT5.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="867">
-          <caret line="51" selection-start-line="51" selection-end-line="51" />
-          <folding>
-            <element signature="e#113#155#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/girisekrani.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
-          <folding>
-            <element signature="e#198#240#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -472,17 +457,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/KullaniciGirisi.py">
+    <entry file="file://$PROJECT_DIR$/veritabaniQT5.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="17" lean-forward="true" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+        <state relative-caret-position="340">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
+          <folding>
+            <element signature="e#113#155#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/YurtOtomasyonu.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="68" selection-start-line="1" selection-start-column="68" selection-end-line="1" selection-end-column="68" />
+        <state relative-caret-position="286">
+          <caret line="491" column="21" selection-start-line="491" selection-start-column="21" selection-end-line="491" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/KullaniciGirisi.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="28" column="27" lean-forward="true" selection-start-line="28" selection-start-column="27" selection-end-line="28" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/girisekrani.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="271">
+          <caret line="100" column="78" selection-start-line="100" selection-start-column="78" selection-end-line="100" selection-end-column="78" />
+          <folding>
+            <element signature="e#1#22#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
