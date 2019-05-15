@@ -6,10 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="866e1d02-2abd-47bc-b24a-fe05901aa7b2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Yurt.db" beforeDir="false" afterPath="$PROJECT_DIR$/Yurt.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/girisekrani.py" beforeDir="false" afterPath="$PROJECT_DIR$/girisekrani.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/girisekrani.ui" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/veritabaniQT5.py" beforeDir="false" afterPath="$PROJECT_DIR$/veritabaniQT5.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,11 +22,20 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/girisekrani.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="271">
-              <caret line="100" column="78" selection-start-line="100" selection-start-column="78" selection-end-line="100" selection-end-column="78" />
+            <state relative-caret-position="442">
+              <caret line="26" column="32" lean-forward="true" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
               <folding>
                 <element signature="e#1#22#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/KullaniciGirisi.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="21" column="21" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -74,8 +79,8 @@
       <find>login</find>
       <find>main</find>
       <find>cr</find>
-      <find>logf</find>
       <find>widgets</find>
+      <find>logf</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -345,13 +350,27 @@
       <option name="project" value="LOCAL" />
       <updated>1557781773696</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="login and sign-up system added with tkinter">
+      <created>1557855924394</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1557855924395</updated>
+    </task>
+    <task id="LOCAL-00011" summary="giriş ve kayıt ekranı tkinter arayüzü ile eklendi.">
+      <created>1557856983695</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1557856983696</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
     <option name="totallyTimeSpent" value="790000" />
   </component>
-  <component name="TodoView">
+  <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
       <is-autoscroll-to-source value="true" />
     </todo-panel>
@@ -369,7 +388,7 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32937366" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4997367" visible="true" weight="0.31425485" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4997367" weight="0.31425485" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39956802" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -396,7 +415,9 @@
     <MESSAGE value="." />
     <MESSAGE value="update" />
     <MESSAGE value="updated" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated" />
+    <MESSAGE value="login and sign-up system added with tkinter" />
+    <MESSAGE value="giriş ve kayıt ekranı tkinter arayüzü ile eklendi." />
+    <option name="LAST_COMMIT_MESSAGE" value="giriş ve kayıt ekranı tkinter arayüzü ile eklendi." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Kullanici.db" />
@@ -479,15 +500,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/KullaniciGirisi.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="28" column="27" lean-forward="true" selection-start-line="28" selection-start-column="27" selection-end-line="28" selection-end-column="27" />
+        <state relative-caret-position="153">
+          <caret line="21" column="21" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/girisekrani.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="100" column="78" selection-start-line="100" selection-start-column="78" selection-end-line="100" selection-end-column="78" />
+        <state relative-caret-position="442">
+          <caret line="26" column="32" lean-forward="true" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
           <folding>
             <element signature="e#1#22#0" expanded="true" />
           </folding>

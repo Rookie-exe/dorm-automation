@@ -1,6 +1,7 @@
 # Todo
-#Yetkili kullanıcı girişi(kaydı) ve Öğrenci girişi(kaydı) adlı iki fonksiyon oluştur
-#Eğer yetkili girişi yapılacaksa özel kod istensin
+# Yetkili kullanıcı girişi(kaydı) ve Öğrenci girişi(kaydı) adlı iki fonksiyon oluştur
+# Eğer yetkili girişi yapılacaksa özel kod istensin
+# Giriş ekranına arkaplan müziği ekle
 
 
 from tkinter import *
