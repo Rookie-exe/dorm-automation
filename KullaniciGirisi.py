@@ -34,13 +34,35 @@ def YetkiliKaydiOlustur():
         sifre = input("Bir şifre oluşturunuz:")
         sifre1 = input("Oluşturduğunuz şifreyi tekrar giriniz:")
 
+
+
         while sifre != sifre1:
             print("Yanlış girdiniz!\nOluşturduğunuz şifreyi tekrar giriniz:")
             sifre1 = input("Oluşturduğunuz şifreyi tekrar giriniz:")
 
+        isaretci.execute("create table if not exists bilgileryurt"
+                         "(yurtSahibi TEXT, yurtIsmi TEXT, yatakSayisi INT, Tek_Fiyat INT, Cift_Fiyat INT, Uc_Fiyat INT)")
+
+        yurtismi = input("Yurt ismini giriniz:")
+        yataksayisi = int(input("Yatak sayısını giriniz:"))                    # Yurt bilgilerini aldık
+        tek_fiyat = int(input("Tek kişilik odanızın fiyatını giriniz:"))
+        cift_fiyat = int(input("Çift kişilik odanızın fiyatını giriniz:"))
+        uc_fiyat = int(input("Üç kişilik odanızın fiyatını giriniz:"))
+
+
+        if tek_fiyat == 0 or cift_fiyat == 0 or uc_fiyat == 0:
+            # Eğer değerler 0 ise işlemlerde hata olmasın diye 1 e eşitledik
+            tek_fiyat, cift_fiyat, uc_fiyat = 1, 1, 1
+
         isaretci.execute("INSERT INTO yetkililer values('{}','{}','{}','{}') ".format(ad, soyad, kullaniciadi, sifre))  # Tabloya verileri girme
+
+
+        isaretci.execute("INSERT INTO bilgileryurt values('{}', '{}', {}, {}, {}, {} )".format(kullaniciadi, yurtismi,
+                                                                                               yataksayisi, tek_fiyat, cift_fiyat, uc_fiyat))
+
         baglanti.commit()
         print("Kullanıcı başarıyla oluşturuldu!")
+
 
         girisYap = str(input("Sisteme giriş yapmak ister misiniz?(E/H):"))
         if girisYap == 'E' or girisYap == 'e':

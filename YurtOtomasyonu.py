@@ -346,9 +346,9 @@ class Yurt():
     def Kapat(self):
         quit()
 
-    def YurtBilgisiGiris(self):
+    """def YurtBilgisiGiris(self):
         isaretci.execute("create table if not exists bilgileryurt"
-                            "(yurtIsmi TEXT, yatakSayisi INT, Tek_Fiyat INT, Cift_Fiyat INT, Uc_Fiyat INT)")
+                            "(yurtSahibi, yurtIsmi TEXT, yatakSayisi INT, Tek_Fiyat INT, Cift_Fiyat INT, Uc_Fiyat INT)")
 
         self.yurtismi = input("Yurt ismini giriniz:")
         self.yataksayisi = int(input("Yatak sayısını giriniz:"))
@@ -365,7 +365,7 @@ class Yurt():
             "INSERT INTO bilgileryurt values('{}', {}, {}, {}, {})"
                 .format(self.yurtismi, self.yataksayisi, self.tek_fiyat, self.cift_fiyat, self.uc_fiyat))
 
-        baglanti.commit()
+        baglanti.commit()"""
 
 
     def YurtBilgisiGoster(self):
@@ -479,7 +479,6 @@ if secimGiris == 1:
 
     if secim == 1:
         YetkiliKaydiOlustur()
-        yurt1.YurtBilgisiGiris()
         yurt1.ArayuzYurt()
 
     elif secim == 2:
@@ -501,7 +500,7 @@ elif secimGiris == 2:
                 ogrenci1.YemekleriGoster()
 
             elif secim1 == 4:
-	            ogrenci1.DuyurulariGoster()
+                ogrenci1.DuyurulariGoster()
 
 elif secimGiris == 3:
 
