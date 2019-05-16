@@ -5,13 +5,9 @@ from PencereIslemleri import *
 import datetime
 from PyQt5 import QtCore, QtGui, QtWidgets
 import GrafikIslemleri
-from girisekrani import *
-
-
 
 baglanti = sqlite3.connect("Yurt.db")
 isaretci = baglanti.cursor()
-
 
 class Ogrenci():
 
@@ -473,6 +469,8 @@ ogrenci1 = Ogrenci()
 yurt1 = Yurt()
 
 
+
+
 secimGiris = int(input("1-Yeni Kullanıcı Oluştur\n2-Öğrenci girişi yap\n3-Yetkili girişi yap\nSeçiniz:"))
 
 if secimGiris == 1:
@@ -550,4 +548,3 @@ elif secimGiris == 3:
 
             elif secim1 == 11:
                 exit()
-

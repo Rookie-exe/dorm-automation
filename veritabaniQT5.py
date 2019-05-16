@@ -1,6 +1,8 @@
 # Aşağıdaki kodların bir kısmını QT Designer programı kullanarak basit bir arayüz tasarladım ve buraya aktardım
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+
+
 import sqlite3
 
 class Ui_MainWindow(object):
@@ -24,6 +26,7 @@ class Ui_MainWindow(object):
 
 
 
+
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(800, 600)
@@ -39,7 +42,7 @@ class Ui_MainWindow(object):
         self.btn_goster.setObjectName("btn_goster")
 
         self.btn_goster.clicked.connect(self.Veritabani_Goster)
-        self.btn_goster.clicked(self.ButtonAyari())
+        self.btn_goster.clicked.connect(self.ButtonAyari)
 
         basliklar = ["AD", "SOYAD", "YAŞ", "TC_NO", "OKUL", "BÖLÜM", "TEL_NO", "AYLIK_ODENEN", "ŞEHİR", "KAYIT_TARİHİ"]
         self.tableWidget.setHorizontalHeaderLabels(basliklar)
