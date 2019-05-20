@@ -313,24 +313,23 @@ class Yurt():
         sayac = 0
 
         for i in veriler:
-            for j in i:
-                print("{}. Öğrencinin bilgileri: {}".format(sayac+1, j), end='-')
-                sayac += 1
+            print("{}. Öğrencinin bilgileri: {}".format(sayac+1, i))
+            sayac += 1
 
         secim = int(input("Kaçıncı öğrencinin bilgilerini güncellemek istiyorsunuz?\nSeçiniz:"))
 
-        self.ad = input("{}. Öğrenci için Ad:".format(sayac))
-        self.soyad = input("{}. Öğrenci için Soyad:".format(sayac))
-        self.yas = int(input("{}. Öğrenci için Yaş:".format(sayac)))
-        self.cinsiyet = input("{}. Öğrenci için Cinsiyet(K/E):".format(sayac))
-        self.tcNo = input("{}. Öğrenci için Tc No:".format(sayac))
+        self.ad = input("{}. Öğrenci için Ad:".format(secim))
+        self.soyad = input("{}. Öğrenci için Soyad:".format(secim))
+        self.yas = int(input("{}. Öğrenci için Yaş:".format(secim)))
+        self.cinsiyet = input("{}. Öğrenci için Cinsiyet(K/E):".format(secim))
+        self.tcNo = input("{}. Öğrenci için Tc No:".format(secim))
         while len(self.tcNo) != 11:
             Pencere_Basarisiz()
             self.tcNo = input("Tc No 11 haneli olmalıdır!\nTekrar deneyiniz:")
 
-        self.okul = input("{}. Öğrenci için Okul:".format(sayac))
-        self.bolum = input("{}. Öğrenci için Bölüm:".format(sayac))
-        self.telefonno = input("{}. Ögrenci için Telefon Numarası(Örn:537..):".format(sayac))
+        self.okul = input("{}. Öğrenci için Okul:".format(secim))
+        self.bolum = input("{}. Öğrenci için Bölüm:".format(secim))
+        self.telefonno = input("{}. Ögrenci için Telefon Numarası(Örn:537..):".format(secim))
 
         nakit = input("Toplam tutar nakit mi ödenecek?(E/H):")
 
@@ -339,27 +338,26 @@ class Yurt():
 
         elif nakit == 'H' or nakit == 'h':
 
-            self.tutar = int(input("{}. Öğrenci için ödenecek aylık tutar(TL):".format(sayac)))
-            self.sozlesme = int(input("{}. Öğrenci için Sözleşme kaç kay olacak:".format(sayac)))
+            self.tutar = int(input("{}. Öğrenci için ödenecek aylık tutar(TL):".format(secim)))
+            self.sozlesme = int(input("{}. Öğrenci için Sözleşme kaç kay olacak:".format(secim)))
 
             self.KalanTutar = (self.tutar * self.sozlesme / self.sozlesme)
 
-        self.sehir = input("{}. Öğrenci için Şehir:".format(sayac))
+        self.sehir = input("{}. Öğrenci için Şehir:".format(secim))
 
         simdi = datetime.datetime.now()
         kayittarih = simdi.strftime("%d/%m/%Y")
 
-        Pencere_Basarili()
-
         sayac += 1
 
-        isaretci.execute("UPDATE bilgilerogrenci SET ad = '{}', soyad = '{}', yas = {}, cinsiyet = {}, TCNO = {}, "
-                         "okul = '{}', bolum = '{}', telefon = {}, KalanTutar = {}, sehir = '{}', "
-                         "kayittarih = '{}'  WHERE ROWID = {}"
-                         .format(self.ad, self.soyad, self.yas, self.cinsiyet, self.tcNo, self.okul, self.bolum,
-                                 self.telefonno, self.KalanTutar, self.sehir, kayittarih, secim))
-
-        baglanti.commit()  # Güncellemeyi gerçekleştirmek için commit ettik
+        isaretci.execute("UPDATE bilgilerogrenci SET ad = ?, soyad = ?, yas = ?, cinsiyet = ?, TCNO = ?, "
+                         "okul = ?, bolum = ?, telefon = ?, KalanTutar = ?, sehir = ?, "
+                         "kayittarih = ?  WHERE ROWID = ?", (self.ad, self.soyad, self.yas, self.cinsiyet, self.tcNo,
+                                                             self.okul, self.bolum,
+                                                             self.telefonno, self.KalanTutar, self.sehir, kayittarih,
+                                                             secim,))
+        Pencere_Basarili()
+        baglanti.commit()  # Güncellemeyi gerçekleştirmek için
 
     def SaatTarih(self):
 

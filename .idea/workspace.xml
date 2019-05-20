@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="866e1d02-2abd-47bc-b24a-fe05901aa7b2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GrafikIslemleri.py" beforeDir="false" afterPath="$PROJECT_DIR$/GrafikIslemleri.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/KullaniciGirisi.py" beforeDir="false" afterPath="$PROJECT_DIR$/KullaniciGirisi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Yurt.db" beforeDir="false" afterPath="$PROJECT_DIR$/Yurt.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/YurtOtomasyonu.py" beforeDir="false" afterPath="$PROJECT_DIR$/YurtOtomasyonu.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,8 +22,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/YurtOtomasyonu.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="65">
-              <caret line="563" lean-forward="true" selection-start-line="563" selection-end-line="563" />
+            <state relative-caret-position="282">
+              <caret line="351" lean-forward="true" selection-start-line="351" selection-end-line="351" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
               </folding>
@@ -34,8 +34,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/KullaniciGirisi.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="197">
-              <caret line="37" column="42" lean-forward="true" selection-start-line="37" selection-start-column="42" selection-end-line="37" selection-end-column="42" />
+            <state relative-caret-position="78">
+              <caret line="210" lean-forward="true" selection-start-line="210" selection-end-line="210" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
               </folding>
@@ -54,7 +54,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>log</find>
       <find>n_</find>
       <find>c</find>
       <find>login</find>
@@ -82,8 +81,9 @@
       <find>Yanlış</find>
       <find>Tekrar</find>
       <find>ogrenci_kullaniciadi</find>
-      <find>UPDATE</find>
       <find>Ad</find>
+      <find>UPDATE</find>
+      <find>Guncelle</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -412,7 +412,14 @@
       <option name="project" value="LOCAL" />
       <updated>1558359874506</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary=".">
+      <created>1558385981501</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1558385981501</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -429,7 +436,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-4" y="-4" width="1928" height="1044" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49421486" visible="true" weight="0.15113218" />
       <window_info id="Structure" order="1" sideWeight="0.5057851" side_tool="true" weight="0.25961033" />
@@ -548,8 +554,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/KullaniciGirisi.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="37" column="42" lean-forward="true" selection-start-line="37" selection-start-column="42" selection-end-line="37" selection-end-column="42" />
+        <state relative-caret-position="78">
+          <caret line="210" lean-forward="true" selection-start-line="210" selection-end-line="210" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
           </folding>
@@ -558,8 +564,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/YurtOtomasyonu.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="65">
-          <caret line="563" lean-forward="true" selection-start-line="563" selection-end-line="563" />
+        <state relative-caret-position="282">
+          <caret line="351" lean-forward="true" selection-start-line="351" selection-end-line="351" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
           </folding>

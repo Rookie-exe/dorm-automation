@@ -36,12 +36,10 @@ class Kullanicilar():
                     bulundu = 1
 
             ad = input("Adınızı giriniz:")
-            soyad = input("Soyadınızı giriniz:")
-            #### Bilgileri kullanicidan aldik ####
+            soyad = input("Soyadınızı giriniz:") #### Bilgileri kullanicidan aldik ####
+
             sifre = input("Bir şifre oluşturunuz:")
             sifre1 = input("Oluşturduğunuz şifreyi tekrar giriniz:")
-
-
 
             while sifre != sifre1:
                 Pencere_Basarisiz()
@@ -52,7 +50,7 @@ class Kullanicilar():
                              "(yurtSahibi TEXT, yurtIsmi TEXT, yatakSayisi INT")
 
             yurtismi = input("Yurt ismini giriniz:")
-            yataksayisi = int(input("Yatak sayısını giriniz:"))                    # Yurt bilgilerini aldık
+            yataksayisi = int(input("Yatak sayısını giriniz:"))      # Yurt bilgilerini aldık
 
             # Tabloya verileri girme
             isaretci.execute("INSERT INTO yetkililer values('{}','{}','{}','{}') ".format(ad, soyad,
@@ -259,7 +257,7 @@ class Kullanicilar():
             yetkili_kullaniciadi = input("Yeni kullanıcı adı:")
 
             k_bul = "SELECT * FROM ogrenciler WHERE kullaniciadi=?"
-            isaretci.execute(k_bul, [ogrenci_kullaniciadi])
+            isaretci.execute(k_bul, [yetkili_kullaniciadi])
 
             if isaretci.fetchall():  # True değer dönerse böyle bir kadi oldugunu bulmus olucaz
                 print("Kullanıcı adı kullanılıyor!\nTekrar deneyiniz")
@@ -279,9 +277,10 @@ class Kullanicilar():
             print("Yanlış girdiniz!\nYeni şifreyi tekrar giriniz:")
             sifre1 = input("Yeni şifreyi tekrar giriniz:")
 
+        # Verileri güncelleme
         isaretci.execute("UPDATE yetkililer "
                          "SET kullaniciadi = ?, ad = ?, soyad = ?, sifre = ? "
-                         "WHERE ROWID = ?", (ogrenci_kullaniciadi, ad, soyad, sifre, yetkili_no,)) # Verileri güncelleme
+                         "WHERE ROWID = ?", (ogrenci_kullaniciadi, ad, soyad, sifre, yetkili_no,))
 
         baglanti.commit()
 
