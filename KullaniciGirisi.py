@@ -278,7 +278,7 @@ class Kullanicilar():
         # Verileri güncelleme
         isaretci.execute("UPDATE yetkililer "
                          "SET kullaniciadi = ?, ad = ?, soyad = ?, sifre = ? "
-                         "WHERE ROWID = ?", (ogrenci_kullaniciadi, ad, soyad, sifre, yetkili_no,))
+                         "WHERE ROWID = ?", (yetkili_kullaniciadi, ad, soyad, sifre, yetkili_no,))
 
         baglanti.commit()
 

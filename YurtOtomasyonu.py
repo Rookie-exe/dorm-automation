@@ -134,10 +134,7 @@ class Yurt():
                 simdi = datetime.datetime.now()
                 kayittarih = simdi.strftime("%d/%m/%Y")
 
-                Pencere_Basarili()
-
                 sayac += 1
-
 
                 baglanti.commit()
                 isaretci.execute(
