@@ -42,12 +42,10 @@ class Kullanicilar():
             sifre1 = input("Oluşturduğunuz şifreyi tekrar giriniz:")
 
             while sifre != sifre1:
-                Pencere_Basarisiz()
                 print("Yanlış girdiniz!\nOluşturduğunuz şifreyi tekrar giriniz:")
                 sifre1 = input("Oluşturduğunuz şifreyi tekrar giriniz:")
 
-            isaretci.execute("create table if not exists bilgileryurt"
-                             "(yurtSahibi TEXT, yurtIsmi TEXT, yatakSayisi INT")
+            isaretci.execute("CREATE TABLE IF NOT EXISTS bilgileryurt(yurtSahibi TEXT, yurtIsmi TEXT, yatakSayisi INT)")
 
             yurtismi = input("Yurt ismini giriniz:")
             yataksayisi = int(input("Yatak sayısını giriniz:"))      # Yurt bilgilerini aldık
