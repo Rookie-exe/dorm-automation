@@ -22,8 +22,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/YurtOtomasyonu.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="101">
-              <caret line="488" column="21" lean-forward="true" selection-start-line="488" selection-start-column="21" selection-end-line="488" selection-end-column="21" />
+            <state relative-caret-position="221">
+              <caret line="94" column="8" lean-forward="true" selection-start-line="94" selection-start-column="8" selection-end-line="94" selection-end-column="14" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
               </folding>
@@ -32,10 +32,22 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/KullaniciGirisi.py">
+        <entry file="file://$PROJECT_DIR$/GrafikIslemleri.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="453">
-              <caret line="64" selection-start-line="64" selection-end-line="64" />
+              <caret line="43" column="31" selection-start-line="43" selection-start-column="31" selection-end-line="43" selection-end-column="31" />
+              <folding>
+                <element signature="e#0#31#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/KullaniciGirisi.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="210" lean-forward="true" selection-start-line="210" selection-end-line="210" />
             </state>
           </provider>
         </entry>
@@ -51,10 +63,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Grafik</find>
-      <find>Grafi</find>
-      <find>input</find>
-      <find>ROWID</find>
       <find>delete</find>
       <find>Yemek</find>
       <find>OdaSlotu</find>
@@ -81,6 +89,10 @@
       <find>btn_goster</find>
       <find>bilgileryurt</find>
       <find>yurtSahibi</find>
+      <find>ROWID</find>
+      <find>Ogrenci</find>
+      <find>Goster</find>
+      <find>Bilgileri</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -120,7 +132,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -132,6 +143,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -388,7 +400,14 @@
       <option name="project" value="LOCAL" />
       <updated>1558019678151</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="minor fixes">
+      <created>1558021419156</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1558021419156</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -488,16 +507,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/OgrenciGirisi.py" />
     <entry file="file://$PROJECT_DIR$/YetkiliGirisi.py" />
-    <entry file="file://$PROJECT_DIR$/GrafikIslemleri.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="79">
-          <caret line="30" column="22" lean-forward="true" selection-start-line="30" selection-start-column="22" selection-end-line="30" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/PencereIslemleri.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -512,13 +521,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/KullaniciGirisi.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="453">
-          <caret line="64" selection-start-line="64" selection-end-line="64" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/veritabaniQT5.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -526,10 +528,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/KullaniciGirisi.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="210" lean-forward="true" selection-start-line="210" selection-end-line="210" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GrafikIslemleri.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="453">
+          <caret line="43" column="31" selection-start-line="43" selection-start-column="31" selection-end-line="43" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/YurtOtomasyonu.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="101">
-          <caret line="488" column="21" lean-forward="true" selection-start-line="488" selection-start-column="21" selection-end-line="488" selection-end-column="21" />
+        <state relative-caret-position="221">
+          <caret line="94" column="8" lean-forward="true" selection-start-line="94" selection-start-column="8" selection-end-line="94" selection-end-column="14" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
           </folding>

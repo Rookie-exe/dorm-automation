@@ -1,18 +1,38 @@
 import sqlite3
-from KullaniciGirisi import YetkiliKaydiOlustur, OgrenciKaydiOlustur, YetkiliGiris, OgrenciGiris
+from KullaniciGirisi import kullanicilar1
 from veritabaniQT5 import Ui_MainWindow
 from PencereIslemleri import *
 import datetime
 from PyQt5 import QtCore, QtGui, QtWidgets
 import GrafikIslemleri
+import os
 
 baglanti = sqlite3.connect("Yurt.db")
 isaretci = baglanti.cursor()
+
+#  bilgilerogrenci adlı tabloyu oluşturduk
+
+isaretci.execute(
+                    "create table if not exists bilgilerogrenci"
+                    "(ad TEXT NOT NULL,"
+                    "soyad TEXT NOT NULL,"
+                    "yas INT NOT NULL,"
+                    "TCNO INT NOT NULL, "
+                    "okul TEXT,"
+                    "bolum TEXT, "
+                    "telefon INT, "
+                    "KalanTutar INT NOT NULL, "
+                    "sehir TEXT, "
+                    "kayittarih TEXT)"
+                )
 
 class Ogrenci():
 
     def __init__(self, ):
         pass
+
+    def EkranTemizle(self):
+        os.system('cls')
 
     def YemekleriGoster(self):
 
@@ -29,6 +49,8 @@ class Ogrenci():
 
         for i in veriler:
             print(i)
+
+
 
     def ArayuzOgrenci(self):
 
@@ -68,6 +90,9 @@ class Yurt():
         self.tek_fiyat = TekKisilikFiyat
         self.cift_fiyat = CiftKisilikFiyat
         self.uc_fiyat = UcKisilikFiyat
+
+    def EkranTemizle(self):
+        return os.system('cls')
 
     def OgrenciEkle(self):  # Öğrenci ekle
         try:
@@ -113,19 +138,7 @@ class Yurt():
 
                 sayac += 1
 
-                isaretci.execute(
-                    "create table if not exists bilgilerogrenci"
-                    "(ad TEXT NOT NULL,"
-                    "soyad TEXT NOT NULL,"
-                    "yas INT NOT NULL,"
-                    "TCNO INT NOT NULL, "
-                    "okul TEXT,"
-                    "bolum TEXT, "
-                    "telefon INT, "
-                    "KalanTutar INT NOT NULL, "
-                    "sehir TEXT, "
-                    "kayittarih TEXT)"
-                )
+
                 baglanti.commit()
                 isaretci.execute(
                     "insert into bilgilerogrenci values('{}','{}',{}, {} ,'{}','{}', {}, {}, '{}', '{}')"
@@ -199,7 +212,8 @@ class Yurt():
                 soyad = input("Aranacak öğrencinin soyadını giriniz:")
 
                 # Kullanıcı tam ad veya soyad girmese bile arama optimizasyonu sayesinde öğrenci bulunabilir
-                sonuclar = isaretci.execute("SELECT * FROM bilgilerogrenci WHERE ad LIKE '%'||?||'%' AND soyad LIKE '%'||?||'%'", (ad, soyad,))
+                sonuclar = isaretci.execute("SELECT * FROM bilgilerogrenci WHERE ad LIKE '%'||?||'%' AND soyad "
+                                            "LIKE '%'||?||'%'", (ad, soyad,))
                 baglanti.commit()
 
                 if sonuclar:
@@ -217,7 +231,7 @@ class Yurt():
             try:
                 tcno = int(input("Aranacak öğrencinin Tc Kimlik Numarasını giriniz:"))
 
-                sonuclar = isaretci.execute("SELECT * FROM bilgilerogrenci WHERE TCNO = ?", (tcno,))
+                sonuclar = isaretci.execute("SELECT * FROM bilgilerogrenci WHERE TCNO = ?", (tcno,))  # Tc no al
                 baglanti.commit()
 
                 if sonuclar:
@@ -338,39 +352,18 @@ class Yurt():
 
     def SaatTarih(self):
 
-       simdi = datetime.datetime.now()
+        simdi = datetime.datetime.now()
 
-       saat_tarih = simdi.strftime("%d/%m/%Y, %H:%M:%S")
-       print("Tarih ve Saat:{}".format(saat_tarih))
+        saat_tarih = simdi.strftime("%d/%m/%Y, %H:%M:%S")
+        print("Tarih ve Saat:{}".format(saat_tarih))
 
     def Kapat(self):
         quit()
 
-    """def YurtBilgisiGiris(self):
-        isaretci.execute("create table if not exists bilgileryurt"
-                            "(yurtSahibi, yurtIsmi TEXT, yatakSayisi INT, Tek_Fiyat INT, Cift_Fiyat INT, Uc_Fiyat INT)")
-
-        self.yurtismi = input("Yurt ismini giriniz:")
-        self.yataksayisi = int(input("Yatak sayısını giriniz:"))
-        self.tek_fiyat = int(input("Tek kişilik odanızın fiyatını giriniz:"))
-        self.cift_fiyat = int(input("Çift kişilik odanızın fiyatını giriniz:"))
-        self.uc_fiyat = int(input("Üç kişilik odanızın fiyatını giriniz:"))
-
-        if self.tek_fiyat == 0 or self.cift_fiyat == 0 or self.uc_fiyat == 0:
-            self.tek_fiyat, self.cift_fiyat, self.uc_fiyat = 1, 1, 1
-
-        ############################################################################
-
-        isaretci.execute(
-            "INSERT INTO bilgileryurt values('{}', {}, {}, {}, {})"
-                .format(self.yurtismi, self.yataksayisi, self.tek_fiyat, self.cift_fiyat, self.uc_fiyat))
-
-        baglanti.commit()"""
-
 
     def YurtBilgisiGoster(self):
-        isaretci.execute("select * from bilgileryurt")
-        sonuclar = isaretci.fetchone()
+        isaretci.execute("SELECT * FROM bilgileryurt")
+        sonuclar = isaretci.fetchall()
 
         for i in sonuclar:
             print("Yurt ismi:{}".format(i))
@@ -382,7 +375,6 @@ class Yurt():
 
         isaretci.execute("select * from bilgilerogrenci")  # Verileri oku
         print("Sistemde toplam {} yatak var.".format(self.yatakSayisi - ogrsayisi))
-
 
 
     def Istatistikler(self):
@@ -452,6 +444,7 @@ class Yurt():
         print("""
                             İşlemler
                             
+                            
                             1-Öğrenci ekle 
                             2-Öğrenci sil 
                             3-Öğrenci ara 
@@ -462,7 +455,8 @@ class Yurt():
                             8-Yurt bilgileri 
                             9-Yurt istatistikleri 
                             10-Duyuru işlemleri
-                            11-Uygulamayı kapat                       
+                            11-Bilgilerim
+                            12-Uygulamayı kapat                       
                 """)
 
 ogrenci1 = Ogrenci()
@@ -478,25 +472,29 @@ if secimGiris == 1:
     secim = int(input("1-Yetkili kaydı yap\n2-Öğrenci kaydı yap\nSeçiniz:"))
 
     if secim == 1:
-        YetkiliKaydiOlustur()
+        kullanicilar1.YetkiliKaydiOlustur()
         yurt1.ArayuzYurt()
 
     elif secim == 2:
-        OgrenciKaydiOlustur()
+        kullanicilar1.OgrenciKaydiOlustur()
         ogrenci1.ArayuzOgrenci()
 
 
 elif secimGiris == 2:
 
-    if OgrenciGiris():
+    if kullanicilar1.OgrenciGiris():
 
         while True:
+
 
             yurt1.SaatTarih()
             ogrenci1.ArayuzOgrenci()
             secim1 = int(input("Yapmak istediğiniz işlemi seçiniz:"))
 
-            if secim1 == 3:
+            if secim1 == 1:
+                kullanicilar1.OgrenciBilgilerim()
+
+            elif secim1 == 3:
                 ogrenci1.YemekleriGoster()
 
             elif secim1 == 4:
@@ -504,7 +502,7 @@ elif secimGiris == 2:
 
 elif secimGiris == 3:
 
-    if YetkiliGiris():
+    if kullanicilar1.YetkiliGiris():
 
         while True:
 
@@ -526,7 +524,6 @@ elif secimGiris == 3:
             elif secim1 == 4:
                 yurt1.OgrenciBilgileri()
 
-
             elif secim1 == 5:
                 yurt1.OgrenciFiltrele()
 
@@ -537,7 +534,7 @@ elif secimGiris == 3:
                 yurt1.YemekBilgisiGiris()
 
             elif secim1 == 8:
-                    yurt1.YurtBilgisiGoster()
+                yurt1.YurtBilgisiGoster()
 
             elif secim1 == 9:
                 yurt1.Istatistikler()
@@ -546,4 +543,6 @@ elif secimGiris == 3:
                 yurt1.DuyuruIslemleri()
 
             elif secim1 == 11:
+                kullanicilar1.YetkiliBilgilerim()
+            elif secim1 == 12:
                 exit()
