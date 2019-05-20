@@ -3,7 +3,7 @@ from KullaniciGirisi import kullanicilar1
 from veritabaniQT5 import Ui_MainWindow
 from PencereIslemleri import *
 import datetime
-from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5 import QtWidgets
 import GrafikIslemleri
 import os
 
@@ -17,7 +17,8 @@ isaretci.execute(
                     "(ad TEXT NOT NULL,"
                     "soyad TEXT NOT NULL,"
                     "yas INT NOT NULL,"
-                    "TCNO INT NOT NULL, "
+                    "cinsiyet TEXT NOT NULL,"
+                    "TCNO INT NOT NULL,"
                     "okul TEXT,"
                     "bolum TEXT, "
                     "telefon INT, "
@@ -59,9 +60,9 @@ class Ogrenci():
                     İşlemler
                     
                     1-Bilgilerim
-                    2-Karta para yükle
-                    3-Yemekleri göster
-                    4-Duyuruları göster
+                    2-Yemekleri göster
+                    3-Duyuruları göster
+                    4-Bilgilerimi güncelle
                     5-Uygulamayı kapat 
                    
         """)
@@ -69,9 +70,8 @@ class Ogrenci():
 class Yurt():
 
     def __init__(self, ad="-", soyad="-", yas=0, tcNo=0, okul="-", bolum="-", telefonNo=0,
-                 Durum="Aktif", OdenecekTutar=0, KalanTutar = 0, sozlesme=0, sehir="", kayittarih=0, odasecimi=0,
-                 yurtIsmi="", yatakSayisi = 0, TekKisilikFiyat = 0, CiftKisilikFiyat = 0, UcKisilikFiyat = 0):
-        self.durum = Durum
+                 OdenecekTutar=0, KalanTutar = 0, sozlesme=0, sehir="", kayittarih=0, odasecimi=0,
+                 yurtIsmi="-", yatakSayisi = 0, Cinsiyet="-"):
         self.ad = ad
         self.soyad = soyad
         self.yas = yas
@@ -87,9 +87,7 @@ class Yurt():
         self.odasecimi = odasecimi
         self.yurtismi = yurtIsmi
         self.yatakSayisi = yatakSayisi
-        self.tek_fiyat = TekKisilikFiyat
-        self.cift_fiyat = CiftKisilikFiyat
-        self.uc_fiyat = UcKisilikFiyat
+        self.cinsiyet = Cinsiyet
 
     def EkranTemizle(self):
         return os.system('cls')
@@ -100,22 +98,22 @@ class Yurt():
             sayac = 1
             for i in range(0, sayi):
 
-                ad = input("{}. Öğrenci için Ad:".format(sayac, self.ad))
-                soyad = input("{}. Öğrenci için Soyad:".format(sayac, self.soyad))
-                yas = int(input("{}. Öğrenci için Yaş:".format(sayac, self.yas)))
-                tcNo = input("{}. Öğrenci için Tc No:".format(sayac, self.tcno))
-                while len(tcNo) != 11:
-                    tcNo = input("Tc No 11 haneli olmalıdır!\nTekrar deneyiniz:")
+                self.ad = input("{}. Öğrenci için Ad:".format(sayac))
+                self.soyad = input("{}. Öğrenci için Soyad:".format(sayac))
+                self.yas = int(input("{}. Öğrenci için Yaş:".format(sayac)))
+                self.cinsiyet = input("{}. Öğrenci için Cinsiyet(K/E):".format(sayac))
 
-                okul = input("{}. Öğrenci için Okul:".format(sayac, self.okul))
-                bolum = input("{}. Öğrenci için Bölüm:".format(sayac, self.bolum))
-                telefon = input("{}. Ögrenci için Telefon Numarası(Örn:537..):".format(sayac, self.telefonno))
+                """while cinsiyet != "K" or cinsiyet != "E":
 
-                """isaretci.execute("SELECT OdaSlotu1, OdaSlotu2, OdaSlotu3 FROM bilgileryurt")
-                veriler = isaretci.fetchone()
+                    cinsiyet = input("Yanlış girdiniz!\n{}. Öğrenci için Cinsiyet(K/E):".format(sayac))"""
 
-                for i in veriler:
-                    print(i)"""
+                self.tcNo = input("{}. Öğrenci için Tc No:".format(sayac))
+                while len(self.tcNo) != 11:
+                    self.tcNo = input("Tc No 11 haneli olmalıdır!\nTekrar deneyiniz:")
+
+                self.okul = input("{}. Öğrenci için Okul:".format(sayac))
+                self.bolum = input("{}. Öğrenci için Bölüm:".format(sayac))
+                self.telefonno = input("{}. Ögrenci için Telefon Numarası(Örn:537..):".format(sayac))
 
                 nakit = input("Toplam tutar nakit mi ödenecek?(E/H):")
 
@@ -124,12 +122,12 @@ class Yurt():
 
                 elif nakit == 'H' or nakit == 'h':
 
-                    OdenecekTutar = int(input("{}. Öğrenci için ödenecek aylık tutar(TL):".format(sayac, self.tutar)))
-                    sozlesme = int(input("{}.Öğrenci için Sözleşme kaç kay olacak?".format(sayac, self.sozlesme)))
+                    self.tutar = int(input("{}. Öğrenci için ödenecek aylık tutar(TL):".format(sayac)))
+                    self.sozlesme = int(input("{}. Öğrenci için Sözleşme kaç kay olacak:".format(sayac)))
 
-                    self.KalanTutar = (OdenecekTutar*sozlesme / sozlesme)
+                    self.KalanTutar = (self.tutar*self.sozlesme / self.sozlesme)
 
-                sehir = input("{}. Öğrenci için Şehir:".format(sayac, self.sehir))
+                self.sehir = input("{}. Öğrenci için Şehir:".format(sayac))
 
                 simdi = datetime.datetime.now()
                 kayittarih = simdi.strftime("%d/%m/%Y")
@@ -141,8 +139,9 @@ class Yurt():
 
                 baglanti.commit()
                 isaretci.execute(
-                    "insert into bilgilerogrenci values('{}','{}',{}, {} ,'{}','{}', {}, {}, '{}', '{}')"
-                        .format(ad, soyad, yas, tcNo, okul, bolum, telefon, self.KalanTutar, sehir, kayittarih))
+                    "insert into bilgilerogrenci values('{}','{}',{}, '{}' ,{} ,'{}','{}', {}, {}, '{}', '{}')"
+                        .format(self.ad, self.soyad, self.yas, self.cinsiyet, self.tcNo, self.okul, self.bolum,
+                                self.telefonno, self.KalanTutar, self.sehir, kayittarih))
                 baglanti.commit()
                 Pencere_Basarili()
 
@@ -156,7 +155,7 @@ class Yurt():
     def OgrenciSil(self):  # Öğrenci sil
 
         try:
-            NeyeGore = int(input("Neye göre öğrenci silmek istersiniz?\n1-Ad ve soyad\n2-Tc No\n3-ID"))
+            NeyeGore = int(input("Neye göre öğrenci silmek istersiniz?\n1-Ad ve soyad\n2-Tc No\n3-ID\nSeçiniz:"))
 
             if NeyeGore == 1:
                 ad = input("Silinecek öğrencinin adını giriniz:")
@@ -195,8 +194,6 @@ class Yurt():
                 print("Öğrenci başarıyla silindi")
 
                 Pencere_Basarili()
-
-
 
         except ValueError or IndexError:
             print("Geçerli değer giriniz!")
@@ -241,8 +238,8 @@ class Yurt():
                 print("TC Kimlik numarası kısmına yanlış değer girdiniz!")
 
     def OgrenciFiltrele(self):
-        filtrele = int(input("Öğrencileri neye göre filtrelemek istiyorsunuz?\n1-Ad Soyad\n2-Tc Kimlik Numarası\n3-Yaş"
-                           "\n4-Telefon Numarası\n5-Şehir"))
+        filtrele = int(input("Öğrencileri neye göre filtrelemek istiyorsunuz?\n1-Ad Soyad\n2-Tc Kimlik Numarası\n3-Yaş\n"
+                             "4-Telefon Numarası\n5-Şehir"))
 
         if filtrele == 1:
             sonuclar=isaretci.execute("SELECT ad, soyad FROM bilgilerogrenci ORDER BY ad")
@@ -366,7 +363,7 @@ class Yurt():
         sonuclar = isaretci.fetchall()
 
         for i in sonuclar:
-            print("Yurt ismi:{}".format(i))
+            print("Yurt ismi:{}".format(i[1]))
             break
 
         isaretci.execute("select * from bilgilerogrenci")  # Verileri oku
@@ -380,15 +377,18 @@ class Yurt():
     def Istatistikler(self):
         secim = int(input("1-Öğrencilerin yaş grafiğini göster\n"
                       "2-Öğrencilerin geldiği şehirlerin grafiğini göster\n"
-                      "3-Toplam kazanç / zarar grafiğini göster\nSeçim yapınız:"))
+                      "3-Toplam kazanç / zarar grafiğini göster\n4-Cinsiyet grafiğini göster\nSeçim yapınız:"))
         if secim == 1:
             GrafikIslemleri.Grafik_Yas()
 
         elif secim == 2:
-            pass
+            GrafikIslemleri.Grafik_Ulke()
 
         elif secim == 3:
             GrafikIslemleri.Grafik_KarZarar()
+
+        elif secim == 4:
+            GrafikIslemleri.Grafik_Cinsiyet()
 
     def YemekBilgisiGiris(self):
 
@@ -439,31 +439,34 @@ class Yurt():
 
             isaretci.execute("DELETE FROM Duyurular WHERE ROWID = {} ".format(kacinci))
 
+    def HarcamaGirisi(self):
+
+        isaretci.execute("CREATE TABLE IF NOT EXISTS YurtGiderleri(Harcama_Aciklama TEXT, Harcama_Miktar INT)")
+
+        kacAdet = int(input("Kaç tane harcama girişi yapacaksınız:"))
+
+        for sayac in range(1, kacAdet+1):
+
+            harcama_aciklama = input("{}. Harcama açıklaması:".format(sayac))
+            harcama_miktar = int(input("{}. Harcama miktarı:".format(sayac)))
+
+            isaretci.execute("INSERT INTO YurtGiderleri values('{}', {})".format(harcama_aciklama, harcama_miktar))
+
+
     def ArayuzYurt(self):
 
         print("""
                             İşlemler
                             
                             
-                            1-Öğrenci ekle 
-                            2-Öğrenci sil 
-                            3-Öğrenci ara 
-                            4-Öğrenci bilgileri 
-                            5-Öğrenci filtrele 
-                            6-Öğrenci bilgisi güncelle
-                            7-Yemek bilgisi girişi
-                            8-Yurt bilgileri 
-                            9-Yurt istatistikleri 
-                            10-Duyuru işlemleri
-                            11-Bilgilerim
-                            12-Uygulamayı kapat                       
+                            1-ÖĞRENCİ İŞLEMLERİ
+                            2-YURT İŞLEMLERİ
+                            3-BİLGİLERİM
+                            4-ÇIKIŞ                      
                 """)
 
 ogrenci1 = Ogrenci()
 yurt1 = Yurt()
-
-
-
 
 secimGiris = int(input("1-Yeni Kullanıcı Oluştur\n2-Öğrenci girişi yap\n3-Yetkili girişi yap\nSeçiniz:"))
 
@@ -512,37 +515,52 @@ elif secimGiris == 3:
             secim1 = int(input("Yapmak istediğiniz işlemi seçiniz:"))
 
             if secim1 == 1:
-                yurt1.OgrenciEkle()
+
+                ogrenci_islemi = int(input("1-Öğrenci Ekle\n2-Öğrenci sil\n3-Öğrenci ara\n4-Öğrenci bilgileri\n"
+                                           "5-Öğrenci filtrele\n6-Öğrenci bilgisi güncelle\nSeçiniz:"))
+
+
+                if ogrenci_islemi == 1:
+                    yurt1.OgrenciEkle()
+
+                elif ogrenci_islemi == 2:
+                    yurt1.OgrenciBilgileri()
+                    yurt1.OgrenciSil()
+
+                elif ogrenci_islemi == 3:
+                    yurt1.OgrenciAra()
+
+                elif ogrenci_islemi == 4:
+                    yurt1.OgrenciBilgileri()
+
+                elif ogrenci_islemi == 5:
+                    yurt1.OgrenciFiltrele()
+
+                elif ogrenci_islemi == 6:
+                    yurt1.OgrenciBilgiGuncelle()
 
             elif secim1 == 2:
-                yurt1.OgrenciBilgileri()
-                yurt1.OgrenciSil()
+
+                yurt_islemi = int(input("1-Yemek bilgisi girişi\n2-Yurt bilgisi göster\n3-Yurt istatistikleri\n"
+                                        "4-Duyuru işlemleri\n5-Harcama girişi\nSeçiniz:"))
+
+                if yurt_islemi == 1:
+                    yurt1.YemekBilgisiGiris()
+
+                elif yurt_islemi == 2:
+                    yurt1.YurtBilgisiGoster()
+
+                elif yurt_islemi == 3:
+                    yurt1.Istatistikler()
+
+                elif yurt_islemi == 4:
+                    yurt1.DuyuruIslemleri()
+
+                elif yurt_islemi == 5:
+                    yurt1.HarcamaGirisi()
 
             elif secim1 == 3:
-                yurt1.OgrenciAra()
+                kullanicilar1.YetkiliBilgilerim()
 
             elif secim1 == 4:
-                yurt1.OgrenciBilgileri()
-
-            elif secim1 == 5:
-                yurt1.OgrenciFiltrele()
-
-            elif secim1 == 6:
-                yurt1.OgrenciBilgiGuncelle()
-
-            elif secim1 == 7:
-                yurt1.YemekBilgisiGiris()
-
-            elif secim1 == 8:
-                yurt1.YurtBilgisiGoster()
-
-            elif secim1 == 9:
-                yurt1.Istatistikler()
-
-            elif secim1 == 10:
-                yurt1.DuyuruIslemleri()
-
-            elif secim1 == 11:
-                kullanicilar1.YetkiliBilgilerim()
-            elif secim1 == 12:
                 exit()

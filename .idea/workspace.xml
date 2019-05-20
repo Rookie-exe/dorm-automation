@@ -3,9 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="866e1d02-2abd-47bc-b24a-fe05901aa7b2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GrafikIslemleri.py" beforeDir="false" afterPath="$PROJECT_DIR$/GrafikIslemleri.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/KullaniciGirisi.py" beforeDir="false" afterPath="$PROJECT_DIR$/KullaniciGirisi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PencereIslemleri.py" beforeDir="false" afterPath="$PROJECT_DIR$/PencereIslemleri.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Yurt.db" beforeDir="false" afterPath="$PROJECT_DIR$/Yurt.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/YurtOtomasyonu.py" beforeDir="false" afterPath="$PROJECT_DIR$/YurtOtomasyonu.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/veritabaniQT5.py" beforeDir="false" afterPath="$PROJECT_DIR$/veritabaniQT5.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,8 +25,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/YurtOtomasyonu.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="94" column="8" lean-forward="true" selection-start-line="94" selection-start-column="8" selection-end-line="94" selection-end-column="14" />
+            <state relative-caret-position="350">
+              <caret line="101" column="42" selection-start-line="101" selection-start-column="42" selection-end-line="101" selection-end-column="42" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
               </folding>
@@ -34,20 +37,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GrafikIslemleri.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="453">
-              <caret line="43" column="31" selection-start-line="43" selection-start-column="31" selection-end-line="43" selection-end-column="31" />
+            <state relative-caret-position="213">
+              <caret line="61" lean-forward="true" selection-start-line="61" selection-end-line="61" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/KullaniciGirisi.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="210" lean-forward="true" selection-start-line="210" selection-end-line="210" />
             </state>
           </provider>
         </entry>
@@ -63,11 +57,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>delete</find>
-      <find>Yemek</find>
-      <find>OdaSlotu</find>
-      <find>Tek kiş</find>
-      <find>Guncelle</find>
       <find>Kullanıcı</find>
       <find>Button</find>
       <find>quit.db</find>
@@ -93,6 +82,11 @@
       <find>Ogrenci</find>
       <find>Goster</find>
       <find>Bilgileri</find>
+      <find>Harcama</find>
+      <find>Istatistikler</find>
+      <find>Yurt ism</find>
+      <find>Istatis</find>
+      <find>cinsiyet</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -103,20 +97,20 @@
       <list>
         <option value="$PROJECT_DIR$/VeritabaniGoruntule.py" />
         <option value="$PROJECT_DIR$/PyQT5-Veritabani.py" />
-        <option value="$PROJECT_DIR$/PencereIslemleri.py" />
         <option value="$PROJECT_DIR$/ogrencieklemekrani.py" />
         <option value="$PROJECT_DIR$/OgrenciEklemeEkrani.py" />
         <option value="$PROJECT_DIR$/OgrenciEkle.py" />
-        <option value="$PROJECT_DIR$/GrafikIslemleri.py" />
         <option value="$PROJECT_DIR$/EmailGonder.py" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/girisekrani.py" />
         <option value="$PROJECT_DIR$/OgrenciGirisi.py" />
         <option value="$PROJECT_DIR$/YetkiliGirisi.py" />
-        <option value="$PROJECT_DIR$/veritabaniQT5.py" />
         <option value="$PROJECT_DIR$/Yurt.db" />
         <option value="$PROJECT_DIR$/KullaniciGirisi.py" />
+        <option value="$PROJECT_DIR$/PencereIslemleri.py" />
+        <option value="$PROJECT_DIR$/veritabaniQT5.py" />
         <option value="$PROJECT_DIR$/YurtOtomasyonu.py" />
+        <option value="$PROJECT_DIR$/GrafikIslemleri.py" />
       </list>
     </option>
   </component>
@@ -132,6 +126,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -143,7 +138,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -172,6 +166,27 @@
     </option>
   </component>
   <component name="RunManager" selected="Python.YurtOtomasyonu">
+    <configuration name="GrafikIslemleri" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="YurtOtomasyonu" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/GrafikIslemleri.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="KullaniciGirisi" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="YurtOtomasyonu" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -206,27 +221,6 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/OgrenciEkle.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="OgrenciEklemeEkrani" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="YurtOtomasyonu" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/OgrenciEklemeEkrani.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -281,10 +275,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.YurtOtomasyonu" />
+        <item itemvalue="Python.GrafikIslemleri" />
         <item itemvalue="Python.girisekrani" />
         <item itemvalue="Python.KullaniciGirisi" />
         <item itemvalue="Python.OgrenciEkle" />
-        <item itemvalue="Python.OgrenciEklemeEkrani" />
       </list>
     </recent_temporary>
   </component>
@@ -407,7 +401,14 @@
       <option name="project" value="LOCAL" />
       <updated>1558021419156</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary=".">
+      <created>1558344351503</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1558344351503</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -424,14 +425,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-4" y="-4" width="1928" height="1044" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49421486" visible="true" weight="0.15113218" />
       <window_info id="Structure" order="1" sideWeight="0.5057851" side_tool="true" weight="0.25961033" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32937366" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49921012" visible="true" weight="0.31425485" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49921012" visible="true" weight="0.27969763" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39956802" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -455,13 +455,13 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="1" />
     <MESSAGE value="kod eklendi" />
-    <MESSAGE value="." />
     <MESSAGE value="update" />
     <MESSAGE value="updated" />
     <MESSAGE value="login and sign-up system added with tkinter" />
     <MESSAGE value="giriş ve kayıt ekranı tkinter arayüzü ile eklendi." />
     <MESSAGE value="minor fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="minor fixes" />
+    <MESSAGE value="." />
+    <option name="LAST_COMMIT_MESSAGE" value="." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Kullanici.db" />
@@ -507,13 +507,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/OgrenciGirisi.py" />
     <entry file="file://$PROJECT_DIR$/YetkiliGirisi.py" />
-    <entry file="file://$PROJECT_DIR$/PencereIslemleri.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Yurt.db">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="256">
@@ -521,24 +514,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/veritabaniQT5.py">
+    <entry file="file://$PROJECT_DIR$/KullaniciGirisi.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="19" column="21" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
+        <state relative-caret-position="119">
+          <caret line="7" column="22" lean-forward="true" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/KullaniciGirisi.py">
+    <entry file="file://$PROJECT_DIR$/PencereIslemleri.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="210" lean-forward="true" selection-start-line="210" selection-end-line="210" />
+        <state relative-caret-position="136">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/veritabaniQT5.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="35" column="55" selection-start-line="35" selection-start-column="55" selection-end-line="35" selection-end-column="55" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/GrafikIslemleri.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="453">
-          <caret line="43" column="31" selection-start-line="43" selection-start-column="31" selection-end-line="43" selection-end-column="31" />
+        <state relative-caret-position="213">
+          <caret line="61" lean-forward="true" selection-start-line="61" selection-end-line="61" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
           </folding>
@@ -547,8 +550,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/YurtOtomasyonu.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="94" column="8" lean-forward="true" selection-start-line="94" selection-start-column="8" selection-end-line="94" selection-end-column="14" />
+        <state relative-caret-position="350">
+          <caret line="101" column="42" selection-start-line="101" selection-start-column="42" selection-end-line="101" selection-end-column="42" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
           </folding>

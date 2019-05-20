@@ -35,7 +35,7 @@ class Ui_MainWindow(object):
         self.tableWidget = QtWidgets.QTableWidget(self.centralwidget)
         self.tableWidget.setGeometry(QtCore.QRect(10, 10, 781, 401))
         self.tableWidget.setRowCount(1)
-        self.tableWidget.setColumnCount(10)
+        self.tableWidget.setColumnCount(11)
         self.tableWidget.setObjectName("tableWidget")
         self.btn_goster = QtWidgets.QPushButton(self.centralwidget)
         self.btn_goster.setGeometry(QtCore.QRect(320, 460, 121, 31))
@@ -44,7 +44,7 @@ class Ui_MainWindow(object):
         self.btn_goster.clicked.connect(self.Veritabani_Goster)
         self.btn_goster.clicked.connect(self.ButtonAyari)
 
-        basliklar = ["AD", "SOYAD", "YAŞ", "TC_NO", "OKUL", "BÖLÜM", "TEL_NO", "AYLIK_ODENEN", "ŞEHİR", "KAYIT_TARİHİ"]
+        basliklar = ["AD", "SOYAD", "YAŞ", "CİNSİYET", "TC_NO", "OKUL", "BÖLÜM", "TEL_NO", "AYLIK_ODENEN", "ŞEHİR", "KAYIT_TARİHİ"]
         self.tableWidget.setHorizontalHeaderLabels(basliklar)
 
         MainWindow.setCentralWidget(self.centralwidget)

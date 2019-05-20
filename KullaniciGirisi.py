@@ -2,8 +2,11 @@ import sqlite3
 
 baglanti = sqlite3.connect("Yurt.db")
 isaretci = baglanti.cursor()
-isaretci.execute("create table if not exists yetkililer(ad TEXT,soyad TEXT,kullaniciadi TEXT, sifre TEXT)") # Yetkili Tablosu olusturma
-isaretci.execute("create table if not exists ogrenciler(ad TEXT,soyad TEXT,kullaniciadi TEXT, sifre TEXT)") # Öğrenci Tablosu olusturma
+
+# Yetkili Tablosu olusturma
+isaretci.execute("create table if not exists yetkililer(ad TEXT,soyad TEXT,kullaniciadi TEXT, sifre TEXT)")
+# Öğrenci Tablosu olusturma
+isaretci.execute("create table if not exists ogrenciler(ad TEXT,soyad TEXT,kullaniciadi TEXT, sifre TEXT)")
 
 baglanti.commit()
 
@@ -45,26 +48,19 @@ class Kullanicilar():
                 sifre1 = input("Oluşturduğunuz şifreyi tekrar giriniz:")
 
             isaretci.execute("create table if not exists bilgileryurt"
-                             "(yurtSahibi TEXT, yurtIsmi TEXT, yatakSayisi INT, Tek_Fiyat INT, Cift_Fiyat INT, Uc_Fiyat INT)")
+                             "(yurtSahibi TEXT, yurtIsmi TEXT, yatakSayisi INT")
 
             yurtismi = input("Yurt ismini giriniz:")
             yataksayisi = int(input("Yatak sayısını giriniz:"))                    # Yurt bilgilerini aldık
-            tek_fiyat = int(input("Tek kişilik odanızın fiyatını giriniz:"))
-            cift_fiyat = int(input("Çift kişilik odanızın fiyatını giriniz:"))
-            uc_fiyat = int(input("Üç kişilik odanızın fiyatını giriniz:"))
 
 
-            if tek_fiyat == 0 or cift_fiyat == 0 or uc_fiyat == 0:
-                # Eğer değerler 0 ise işlemlerde hata olmasın diye 1 e eşitledik
-                tek_fiyat, cift_fiyat, uc_fiyat = 1, 1, 1
 
             # Tabloya verileri girme
             isaretci.execute("INSERT INTO yetkililer values('{}','{}','{}','{}') ".format(ad, soyad,
                                                                                           yetkili_kullaniciadi, sifre))
 
-            isaretci.execute("INSERT INTO bilgileryurt values('{}', '{}', {}, {}, {}, {} )".format(yetkili_kullaniciadi, yurtismi,
-                                                                                                   yataksayisi, tek_fiyat,
-                                                                                                   cift_fiyat, uc_fiyat))
+            isaretci.execute("INSERT INTO bilgileryurt values('{}', '{}', {} )"
+                             .format(yetkili_kullaniciadi, yurtismi, yataksayisi))
 
             baglanti.commit()
             print("Kullanıcı başarıyla oluşturuldu!")
@@ -78,7 +74,6 @@ class Kullanicilar():
         else:
             print("Yanlış girdiniz!\nÇıkış yapılıyor...")
             exit()
-
 
     def OgrenciKaydiOlustur(self):
         bulundu = 0
@@ -95,10 +90,6 @@ class Kullanicilar():
 
             else:
                 bulundu = 1
-                #guncelOgrenci = isaretci.execute('SELECT ROWID, * FROM ogrenciler WHERE kullaniciadi = {} '.format(kullaniciadi))
-                #print(guncelOgrenci)
-
-
 
         ad = input("Adınızı giriniz:")
         soyad = input("Soyadınızı giriniz:")  #### Bilgileri kullanicidan aldik ####
@@ -113,8 +104,6 @@ class Kullanicilar():
         isaretci.execute("INSERT INTO ogrenciler values('{}','{}','{}','{}') ".format(ad, soyad, ogrenci_kullaniciadi,
                                                                                       sifre))  # Tabloya verileri girme
 
-
-
         baglanti.commit()
         print("Kullanıcı başarıyla oluşturuldu!")
 
@@ -123,7 +112,6 @@ class Kullanicilar():
             Kullanicilar.OgrenciGiris(self)
         else:
             exit()
-
 
     def YetkiliGiris(self):
 
@@ -148,7 +136,7 @@ class Kullanicilar():
 
 
                     for i in sonuclar:
-                        print("Hoş geldin "+i[0])  #0. indekste ad oldugu icin
+                        print("Hoş geldin "+i[0])  # 0. indekste ad olduğu için
                     return True
                 else:
 
@@ -160,8 +148,6 @@ class Kullanicilar():
                         Kullanicilar.YetkiliGiris(self)
                     else:
                         break
-
-
 
     def OgrenciGiris(self):
 
@@ -182,15 +168,6 @@ class Kullanicilar():
             baglanti.commit()
 
             if sonuclar:
-                """isaretci.execute('SELECT * FROM ogrenciler WHERE kullaniciadi = ? ', (kullaniciadi, ))
-                sonuclar2 = isaretci.fetchall()
-    
-                for j in sonuclar2:
-                    print("Ad:{}" .format(j[0]))
-                    print("Soyad:{}".format(j[1]))
-                    print("Kullanıcı adı: {}".format(j[2]))
-                    print("Şifre:{}".format(j[3]))"""
-
                 for i in sonuclar:
                     print("Hoş geldin " + i[0])
 
