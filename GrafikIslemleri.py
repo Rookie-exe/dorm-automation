@@ -60,8 +60,7 @@ def Grafik_KarZarar():
 
 		print("Aylık toplam kazancınız:{}".format(toplam_kazanc))
 
-		isaretci.execute("select SUM(Harcama_Miktar), from YurtGiderleri")
-		isaretci.execute("SELECT Harcama_Aciklama FROM YurtGiderleri")
+		isaretci.execute("select SUM(Harcama_Miktar) FROM YurtGiderleri")
 
 		toplam_harcama = isaretci.fetchall()
 
@@ -69,8 +68,8 @@ def Grafik_KarZarar():
 
 		araliklar = [0, 1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000]
 
-		plt.hist(toplam_kazanc, araliklar, histtype='bar', align='left', orientation='horizontal')
-		plt.hist(toplam_harcama, araliklar, histtype='bar', align='left', orientation='horizontal')
+		plt.hist(toplam_kazanc, araliklar, histtype='bar', align='left')
+		plt.hist(toplam_harcama, araliklar, histtype='bar', align='left')
 
 		plt.xlabel('Aralıklar')
 		plt.ylabel('y')
