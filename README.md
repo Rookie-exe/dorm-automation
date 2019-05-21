@@ -1,2 +1,3 @@
 # YurtOtomasyonu-Proje
-# Dogrulama kodu : 35494848
+# Doğrulama kodu : 35494848
+# 1. Sınıf 2. Dönem final projesi
