@@ -200,7 +200,7 @@ class Yurt():
 
     def OgrenciAra(self):
         EkranTemizle()
-        NeyeGore = int(input("Neye göre arama yapmak istersiniz?\n1-Ad soyad\n2-Tc No"))
+        NeyeGore = int(input("Neye göre arama yapmak istersiniz?\n1-Ad soyad\n2-Tc No\nSeçiniz:"))
 
         if NeyeGore == 1:
 
@@ -240,7 +240,7 @@ class Yurt():
     def OgrenciFiltrele(self):
         EkranTemizle()
         filtrele = int(input("Öğrencileri neye göre filtrelemek istiyorsunuz?\n1-Ad Soyad\n2-Tc Kimlik Numarası\n3-Yaş\n"
-                             "4-Telefon Numarası\n5-Şehir"))
+                             "4-Telefon Numarası\n5-Şehir\nSeçiniz:"))
 
         if filtrele == 1:
             sonuclar=isaretci.execute("SELECT ad, soyad FROM bilgilerogrenci ORDER BY ad")
@@ -270,10 +270,10 @@ class Yurt():
                 print("Öğrencinin adı ve Telefon Numarası: {}".format(i))
 
         elif filtrele == 5:
-            sonuclar = isaretci.execute("SELECT sehir FROM bilgilerogrenci ORDER BY sehir")
+            sonuclar = isaretci.execute("SELECT ad, sehir FROM bilgilerogrenci ORDER BY sehir")
 
             for i in sonuclar:
-                print("")
+                print("Öğrencinin adı ve geldiği şehir: {}".format(i))
 
     def OgrenciBilgileri(self):
         EkranTemizle()
@@ -414,8 +414,8 @@ class Yurt():
 
             yemek_Tarih = input("{}. Yemek tarihini giriniz:".format(i))
             yemek_Corba = input("{} için Çorba:".format(yemek_Tarih))
-            yemek_Ana =  input("{} için Ana yemek:".format(yemek_Tarih))
-            yemek_Ana2 = input("{} için Ana yemek 2:".format(yemek_Tarih))
+            yemek_Ana =  input("{} için Yemek 1:".format(yemek_Tarih))
+            yemek_Ana2 = input("{} için Yemek 2:".format(yemek_Tarih))
             yemek_Ek = input("{} için Tatlı/Salata/İçecek:".format(yemek_Tarih))
 
             isaretci.execute("INSERT INTO Yemekler values('{}' ,'{}', '{}', '{}', '{}')".format(yemek_Tarih, yemek_Corba,
@@ -538,7 +538,6 @@ elif secimGiris == 3:
 
                 ogrenci_islemi = int(input("1-Öğrenci Ekle\n2-Öğrenci sil\n3-Öğrenci ara\n4-Öğrenci bilgileri\n"
                                            "5-Öğrenci filtrele\n6-Öğrenci bilgisi güncelle\nSeçiniz:"))
-
 
                 if ogrenci_islemi == 1:
                     yurt1.OgrenciEkle()

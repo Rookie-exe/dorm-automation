@@ -1,4 +1,5 @@
 import matplotlib.pyplot as plt
+import matplotlib.patches as mpatches
 import sqlite3
 
 baglanti = sqlite3.connect("Yurt.db")
@@ -76,7 +77,13 @@ def Grafik_KarZarar():
 
 		plt.xlabel('Aralıklar')
 		plt.title('Kar Zarar grafiği')
+		mavi = mpatches.Patch(color='blue', label='Gelir')
+
+		turuncu = mpatches.Patch(color='orange', label='Gider')
+		plt.legend(handles=[turuncu])
+
 		plt.show()
+
 
 def Grafik_Cinsiyet():
 
