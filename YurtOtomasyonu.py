@@ -29,7 +29,7 @@ isaretci.execute(
 
 
 def EkranTemizle():
-    return os.system('cls')
+    os.system('cls')
 
 class Ogrenci():
 
@@ -424,6 +424,7 @@ class Yurt():
         baglanti.commit()
 
     def DuyuruIslemleri(self):
+
         EkranTemizle()
         secim = int(input("1-Duyuru Ekle\n2-Duyuru Sil\nSeçiniz:"))
 

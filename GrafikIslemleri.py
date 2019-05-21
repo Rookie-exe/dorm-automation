@@ -79,8 +79,6 @@ def Grafik_KarZarar():
 		plt.title('Kar Zarar grafiği')
 		mavi = mpatches.Patch(color='blue', label='Gelir')
 
-		# turuncu = mpatches.Patch(color='orange', label='Gider')
-		# plt.legend(handles=[turuncu])
 		plt.legend(handles=[mavi])
 
 		plt.show()

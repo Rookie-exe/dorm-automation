@@ -62,7 +62,7 @@ class Kullanicilar():
 
             giris_yap = str(input("Sisteme giriş yapmak ister misiniz?(E/H):"))
             if giris_yap == 'E' or giris_yap == 'e':
-                    Kullanicilar.YetkiliGiris(self)
+                    kullanicilar1.OgrenciGiris()
             else:
                 exit()
         else:
@@ -79,7 +79,7 @@ class Kullanicilar():
 
             ogrenci_kullaniciadi = input("Bir kullanıcı adı oluşturunuz:")
 
-            k_bul = ("SELECT * FROM ogrenciler WHERE kullaniciadi = ?")
+            k_bul = "SELECT * FROM ogrenciler WHERE kullaniciadi = ?"
             isaretci.execute(k_bul, [(ogrenci_kullaniciadi)])
 
             if isaretci.fetchall():  # True değer dönerse böyle bir kadi oldugunu bulmus olucaz
@@ -107,7 +107,7 @@ class Kullanicilar():
 
         giris_yap = str(input("Sisteme giriş yapmak ister misiniz?(E/H):"))
         if giris_yap == 'E' or giris_yap == 'e':
-            Kullanicilar.OgrenciGiris(self)
+            kullanicilar1.OgrenciGiris()
         else:
             exit()
 
@@ -131,7 +131,6 @@ class Kullanicilar():
                 baglanti.commit()
 
                 if sonuclar:
-
 
                     for i in sonuclar:
                         print("Hoş geldin "+i[0])  # 0. indekste ad olduğu için
@@ -168,8 +167,8 @@ class Kullanicilar():
             if sonuclar:
                 for i in sonuclar:
                     print("Hoş geldin " + i[0])
-
                 return True
+
             else:
 
                 print("Kullanıcı adı ve/veya şifre yanlış!")
@@ -242,7 +241,7 @@ class Kullanicilar():
                     sifre1 = input("Yeni şifreyi tekrar giriniz:")
 
                 isaretci.execute("UPDATE ogrenciler SET ad = ?, soyad = ?, kullaniciadi = ?, sifre = ? WHERE ROWID = ?",
-                                 (ad, soyad, ogrenci_kullaniciadi, sifre, satir_no))# Tabloya verileri girme
+                                 (ad, soyad, ogrenci_kullaniciadi, sifre, satir_no))  # Tabloya verileri girme
 
                 baglanti.commit()
 
@@ -260,12 +259,11 @@ class Kullanicilar():
 
                     yetkili_kullaniciadi = input("Yeni kullanıcı adı:")
 
-                    k_bul = "SELECT * FROM ogrenciler WHERE kullaniciadi=?"
+                    k_bul = "SELECT * FROM yetkililer WHERE kullaniciadi=?"
                     isaretci.execute(k_bul, [yetkili_kullaniciadi])
 
                     if isaretci.fetchall():  # True değer dönerse böyle bir kadi oldugunu bulmus olucaz
                         print("Kullanıcı adı kullanılıyor!\nTekrar deneyiniz")
-                        Pencere_Basarisiz()
 
                     else:
                         bulundu = 1
@@ -282,8 +280,7 @@ class Kullanicilar():
                     sifre1 = input("Yeni şifreyi tekrar giriniz:")
 
                 # Verileri güncelleme
-                    isaretci.execute("UPDATE yetkililer "
-                                     "SET ad = ?, soyad = ?, kullaniciadi = ?, sifre = ? WHERE ROWID = ?",
+                    isaretci.execute("UPDATE yetkililer SET ad = ?, soyad = ?, kullaniciadi = ?, sifre = ? WHERE ROWID = ?",
                                      (ad, soyad, yetkili_kullaniciadi, sifre, satir_no))
 
                 baglanti.commit()
