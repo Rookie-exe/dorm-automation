@@ -384,24 +384,26 @@ class Yurt():
         print("Sistemde toplam {} yatak var.".format(self.yatakSayisi - ogrsayisi))
 
 
-    def Istatistikler(self):
+    def Grafikler(self):
         EkranTemizle()
-        secim = int(input("1-Öğrencilerin yaş grafiğini göster\n"
-                      "2-Öğrencilerin geldiği şehirlerin grafiğini göster\n"
-                      "3-Toplam kazanç / zarar grafiğini göster\n4-Cinsiyet grafiğini göster\nSeçim yapınız:"))
-        if secim == 1:
+        secim_grafik = int(input("1-Öğrencilerin yaş grafiğini göster\n"
+                                 "2-Öğrencilerin geldiği şehirlerin grafiğini göster\n"
+                                 "3-Toplam kazanç / zarar grafiğini göster\n4-Cinsiyet grafiğini göster"
+                                 "\nSeçim yapınız:"))
+        if secim_grafik == 1:
             GrafikIslemleri.Grafik_Yas()
 
-        elif secim == 2:
-            GrafikIslemleri.Grafik_Ulke()
+        elif secim_grafik == 2:
+            GrafikIslemleri.Grafik_Sehir()
 
-        elif secim == 3:
+        elif secim_grafik == 3:
             GrafikIslemleri.Grafik_KarZarar()
 
-        elif secim == 4:
+        elif secim_grafik == 4:
             GrafikIslemleri.Grafik_Cinsiyet()
 
     def YemekBilgisiGiris(self):
+
         EkranTemizle()
         isaretci.execute("CREATE TABLE IF NOT EXISTS Yemekler(Yemek_Tarih TEXT, Yemek_Bir TEXT, Yemek_İki TEXT, "
                          "Yemek_Uc TEXT, Yemek_Ek TEXT)")
@@ -501,7 +503,7 @@ elif secimGiris == 2:
 
         while True:
 
-            EkranTemizle()
+
             yurt1.SaatTarih()
             ogrenci1.ArayuzOgrenci()
             secim1 = int(input("Yapmak istediğiniz işlemi seçiniz:"))
@@ -569,7 +571,7 @@ elif secimGiris == 3:
                     yurt1.YurtBilgisiGoster()
 
                 elif yurt_islemi == 3:
-                    yurt1.Istatistikler()
+                    yurt1.Grafikler()
 
                 elif yurt_islemi == 4:
                     yurt1.DuyuruIslemleri()

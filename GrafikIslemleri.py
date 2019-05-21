@@ -7,6 +7,7 @@ isaretci = baglanti.cursor()
 # Yaş grafiği
 
 def Grafik_Yas():
+
 	isaretci.execute("SELECT yas FROM bilgilerogrenci")
 	yaslar=[]
 
@@ -21,17 +22,7 @@ def Grafik_Yas():
 	plt.title('Yaş Grafiği')
 	plt.show()
 
-def Grafik_Ulke():
-
-	# Her şehri bir kere aldık
-	isaretci.execute("SELECT DISTINCT sehir FROM bilgilerogrenci")
-	sehirler = []
-
-	veri_sehirler = isaretci.fetchall()
-
-	for i in veri_sehirler:
-		for j in i:  # Listeye dönüştürdük
-			sehirler.append(j)
+def Grafik_Sehir():
 
 	# Her şehri sayıp gruplara ayırdık
 	isaretci.execute("SELECT COUNT(sehir) FROM bilgilerogrenci GROUP BY sehir")
@@ -44,11 +35,22 @@ def Grafik_Ulke():
 		for j in i:         # Listeye dönüştürdük
 			sehir_sayisi.append(j)
 
+	# Her şehri bir kere aldık
+	isaretci.execute("SELECT DISTINCT sehir FROM bilgilerogrenci")
+	sehirler = []
+
+	veri_sehirler = isaretci.fetchall()
+
+	for i in veri_sehirler:
+		for j in i:  # Listeye dönüştürdük
+			sehirler.append(j)
+
 	print(sehir_sayisi)
 	print(sehirler)
 
 	plt.pie(sehir_sayisi, explode=None, labels=sehirler, shadow=True, autopct='%1.1f%%', startangle=90)
 	plt.axis('equal')
+	plt.title("Şehir grafiği")
 	plt.show()
 
 def Grafik_KarZarar():
@@ -60,6 +62,7 @@ def Grafik_KarZarar():
 
 		print("Aylık toplam kazancınız:{}".format(toplam_kazanc))
 
+		# Aylık kazanılan parayı al
 		isaretci.execute("select SUM(Harcama_Miktar) FROM YurtGiderleri")
 
 		toplam_harcama = isaretci.fetchall()
@@ -72,7 +75,6 @@ def Grafik_KarZarar():
 		plt.hist(toplam_harcama, araliklar, histtype='bar', align='left')
 
 		plt.xlabel('Aralıklar')
-		plt.ylabel('y')
 		plt.title('Kar Zarar grafiği')
 		plt.show()
 
@@ -98,7 +100,7 @@ def Grafik_Cinsiyet():
 
 	plt.pie(sayilar, explode=None, labels=cinsiyetler, shadow=True, autopct='%1.1f%%', startangle=90)
 	plt.axis('equal')
-
+	plt.title("Cinsiyet Grafiği")
 	plt.show()
 
 

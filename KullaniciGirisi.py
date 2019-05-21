@@ -212,75 +212,81 @@ class Kullanicilar():
         bulundu = 0
         global ogrenci_kullaniciadi
         isaretci.execute('SELECT ROWID FROM ogrenciler WHERE kullaniciadi = ? ', (ogrenci_kullaniciadi,))
-        ogrenci_no = isaretci.fetchall()
+        ogrenci_satir = isaretci.fetchall()
 
-        while bulundu == 0:
+        for i in ogrenci_satir:     # ogrenci_satir liste olarak geldiği için liste biçiminden çıkarttık
+            for satir_no in i:
 
-            ogrenci_kullaniciadi = input("Yeni kullanıcı adınız:")
+                while bulundu == 0:
 
-            k_bul = "SELECT * FROM ogrenciler WHERE kullaniciadi=?"
-            isaretci.execute(k_bul, [ogrenci_kullaniciadi])
+                    ogrenci_kullaniciadi = input("Yeni kullanıcı adınız:")
 
-            if isaretci.fetchall():  # True değer dönerse böyle bir kadi oldugunu bulmus olucaz
-                print("Kullanıcı adı kullanılıyor!\nTekrar deneyiniz")
+                    k_bul = "SELECT * FROM ogrenciler WHERE kullaniciadi=?"
+                    isaretci.execute(k_bul, [ogrenci_kullaniciadi])
 
-            else:
-                bulundu = 1
+                    if isaretci.fetchall():  # True değer dönerse böyle bir k. adı oldugunu bulmus olucaz
+                        print("Kullanıcı adı kullanılıyor!\nTekrar deneyiniz")
 
-        ad = input("Yeni ad:")
-        soyad = input("Yeni soyad:")  #### Bilgileri kullanicidan aldik ####
+                    else:
+                        bulundu = 1
 
-        sifre = input("Yeni şifre:")
-        sifre1 = input("Yeni şifreyi tekrar giriniz:")
+                ad = input("Yeni ad:")
+                soyad = input("Yeni soyad:")  #### Bilgileri kullanicidan aldik ####
 
-        while sifre != sifre1:
-            Pencere_Basarisiz()
-            print("Yanlış girdiniz!\nYeni şifreyi tekrar giriniz:")
-            sifre1 = input("Yeni şifreyi tekrar giriniz:")
+                sifre = input("Yeni şifre:")
+                sifre1 = input("Yeni şifreyi tekrar giriniz:")
 
-        isaretci.execute("UPDATE ogrenciler "
-                         "SET kullaniciadi = ?, ad = ?, soyad = ?, sifre = ? "
-                         "WHERE ROWID = ?", (ogrenci_kullaniciadi, ad, soyad, sifre, ogrenci_no,))  # Tabloya verileri girme
+                while sifre != sifre1:
+                    Pencere_Basarisiz()
+                    print("Yanlış girdiniz!\nYeni şifreyi tekrar giriniz:")
+                    sifre1 = input("Yeni şifreyi tekrar giriniz:")
 
-        baglanti.commit()
+                isaretci.execute("UPDATE ogrenciler SET ad = ?, soyad = ?, kullaniciadi = ?, sifre = ? WHERE ROWID = ?",
+                                 (ad, soyad, ogrenci_kullaniciadi, sifre, satir_no))# Tabloya verileri girme
+
+                baglanti.commit()
 
     def YetkiliBilgilerimiGuncelle(self):
 
         bulundu = 0
         global yetkili_kullaniciadi
         isaretci.execute('SELECT ROWID FROM yetkililer WHERE kullaniciadi = ? ', (yetkili_kullaniciadi,))
-        yetkili_no = isaretci.fetchall()
-        while bulundu == 0:
+        yetkili_satir = isaretci.fetchall()
 
-            yetkili_kullaniciadi = input("Yeni kullanıcı adı:")
+        for i in yetkili_satir:     # yetkili_satir liste olarak geldiği için liste biçiminden çıkarttık
+            for satir_no in i:
 
-            k_bul = "SELECT * FROM ogrenciler WHERE kullaniciadi=?"
-            isaretci.execute(k_bul, [yetkili_kullaniciadi])
+                while bulundu == 0:
 
-            if isaretci.fetchall():  # True değer dönerse böyle bir kadi oldugunu bulmus olucaz
-                print("Kullanıcı adı kullanılıyor!\nTekrar deneyiniz")
-                Pencere_Basarisiz()
+                    yetkili_kullaniciadi = input("Yeni kullanıcı adı:")
 
-            else:
-                bulundu = 1
+                    k_bul = "SELECT * FROM ogrenciler WHERE kullaniciadi=?"
+                    isaretci.execute(k_bul, [yetkili_kullaniciadi])
 
-        ad = input("Yeni ad:")
-        soyad = input("Yeni soyad:")  #### Bilgileri kullanicidan aldik ####
+                    if isaretci.fetchall():  # True değer dönerse böyle bir kadi oldugunu bulmus olucaz
+                        print("Kullanıcı adı kullanılıyor!\nTekrar deneyiniz")
+                        Pencere_Basarisiz()
 
-        sifre = input("Yeni şifre:")
-        sifre1 = input("Yeni şifreyi tekrar giriniz:")
+                    else:
+                        bulundu = 1
 
-        while sifre != sifre1:
-            Pencere_Basarisiz()
-            print("Yanlış girdiniz!\nYeni şifreyi tekrar giriniz:")
-            sifre1 = input("Yeni şifreyi tekrar giriniz:")
+                ad = input("Yeni ad:")
+                soyad = input("Yeni soyad:")  #### Bilgileri kullanicidan aldik ####
 
-        # Verileri güncelleme
-        isaretci.execute("UPDATE yetkililer "
-                         "SET kullaniciadi = ?, ad = ?, soyad = ?, sifre = ? "
-                         "WHERE ROWID = ?", (yetkili_kullaniciadi, ad, soyad, sifre, yetkili_no,))
+                sifre = input("Yeni şifre:")
+                sifre1 = input("Yeni şifreyi tekrar giriniz:")
 
-        baglanti.commit()
+                while sifre != sifre1:
+                    Pencere_Basarisiz()
+                    print("Yanlış girdiniz!\nYeni şifreyi tekrar giriniz:")
+                    sifre1 = input("Yeni şifreyi tekrar giriniz:")
+
+                # Verileri güncelleme
+                    isaretci.execute("UPDATE yetkililer "
+                                     "SET ad = ?, soyad = ?, kullaniciadi = ?, sifre = ? WHERE ROWID = ?",
+                                     (ad, soyad, yetkili_kullaniciadi, sifre, satir_no))
+
+                baglanti.commit()
 
 
 kullanicilar1 = Kullanicilar()
