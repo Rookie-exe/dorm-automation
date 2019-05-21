@@ -31,6 +31,7 @@ isaretci.execute(
 def EkranTemizle():
     os.system('cls')
 
+
 class Ogrenci():
 
     def __init__(self, ):
@@ -55,7 +56,7 @@ class Ogrenci():
         for i in veriler:
             print(i)
 
-    def BilgilerimiGuncelle(self):
+    def OgrenciBilgileriGuncelle(self):
 
         EkranTemizle()
         kullanicilar1.OgrenciBilgilerimiGuncelle()
@@ -366,8 +367,8 @@ class Yurt():
     def Kapat(self):
         quit()
 
-
     def YurtBilgisiGoster(self):
+
         EkranTemizle()
         isaretci.execute("SELECT * FROM bilgileryurt")
         sonuclar = isaretci.fetchall()
@@ -382,7 +383,6 @@ class Yurt():
 
         isaretci.execute("select * from bilgilerogrenci")  # Verileri oku
         print("Sistemde toplam {} yatak var.".format(self.yatakSayisi - ogrsayisi))
-
 
     def Grafikler(self):
         EkranTemizle()
@@ -464,6 +464,11 @@ class Yurt():
 
             isaretci.execute("INSERT INTO YurtGiderleri values('{}', {})".format(harcama_aciklama, harcama_miktar))
 
+    def YetkiliBilgileriGuncelle(self):
+
+        EkranTemizle()
+
+        kullanicilar1.YetkiliBilgilerimiGuncelle()
 
     def ArayuzYurt(self):
 
@@ -518,7 +523,7 @@ elif secimGiris == 2:
                 ogrenci1.DuyurulariGoster()
 
             elif secim1 == 4:
-                ogrenci1.BilgilerimiGuncelle()
+                ogrenci1.OgrenciBilgileriGuncelle()
 
             elif secim1 == 5:
                 exit()
@@ -582,7 +587,7 @@ elif secimGiris == 3:
                 kullanicilar1.YetkiliBilgilerim()
 
             elif secim1 == 4:
-                kullanicilar1.YetkiliBilgilerimiGuncelle()
+                yurt1.YetkiliBilgileriGuncelle()
 
             elif secim1 == 5:
                 exit()

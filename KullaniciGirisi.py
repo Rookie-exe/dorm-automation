@@ -253,7 +253,7 @@ class Kullanicilar():
         yetkili_satir = isaretci.fetchall()
 
         for i in yetkili_satir:     # yetkili_satir liste olarak geldiği için liste biçiminden çıkarttık
-            for satir_no in i:
+            for j in i:
 
                 while bulundu == 0:
 
@@ -269,7 +269,7 @@ class Kullanicilar():
                         bulundu = 1
 
                 ad = input("Yeni ad:")
-                soyad = input("Yeni soyad:")  #### Bilgileri kullanicidan aldik ####
+                soyad = input("Yeni soyad:")  # Bilgileri kullanicidan aldik #
 
                 sifre = input("Yeni şifre:")
                 sifre1 = input("Yeni şifreyi tekrar giriniz:")
@@ -281,7 +281,7 @@ class Kullanicilar():
 
                 # Verileri güncelleme
                     isaretci.execute("UPDATE yetkililer SET ad = ?, soyad = ?, kullaniciadi = ?, sifre = ? WHERE ROWID = ?",
-                                     (ad, soyad, yetkili_kullaniciadi, sifre, satir_no))
+                                     (ad, soyad, yetkili_kullaniciadi, sifre, j))
 
                 baglanti.commit()
 

@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="866e1d02-2abd-47bc-b24a-fe05901aa7b2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GrafikIslemleri.py" beforeDir="false" afterPath="$PROJECT_DIR$/GrafikIslemleri.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KullaniciGirisi.py" beforeDir="false" afterPath="$PROJECT_DIR$/KullaniciGirisi.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/YurtOtomasyonu.py" beforeDir="false" afterPath="$PROJECT_DIR$/YurtOtomasyonu.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,8 +21,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/YurtOtomasyonu.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="214">
-              <caret line="429" column="22" lean-forward="true" selection-start-line="429" selection-start-column="22" selection-end-line="429" selection-end-column="22" />
+            <state relative-caret-position="373">
+              <caret line="581" lean-forward="true" selection-start-line="581" selection-end-line="581" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
               </folding>
@@ -33,22 +33,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/KullaniciGirisi.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="16" selection-start-line="16" selection-end-line="16" />
+            <state relative-caret-position="1191">
+              <caret line="276" column="38" lean-forward="true" selection-start-line="276" selection-start-column="38" selection-end-line="276" selection-end-column="38" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/GrafikIslemleri.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="58" column="53" lean-forward="true" selection-start-line="58" selection-start-column="53" selection-end-line="58" selection-end-column="53" />
-              <folding>
-                <element signature="e#0#31#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -65,13 +53,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>self.ad</find>
-      <find>logf</find>
-      <find>btn_goster</find>
-      <find>bilgileryurt</find>
-      <find>yurtSahibi</find>
-      <find>ROWID</find>
-      <find>Ogrenci</find>
       <find>Goster</find>
       <find>Bilgileri</find>
       <find>Harcama</find>
@@ -82,12 +63,10 @@
       <find>Başarılı</find>
       <find>giris</find>
       <find>Yanlış</find>
-      <find>Tekrar</find>
       <find>ogrenci_kullaniciadi</find>
       <find>Ad</find>
       <find>Guncelle</find>
       <find>ogrenci_kullanici</find>
-      <find>Bilgilerim</find>
       <find>OgrenciBilgilerim</find>
       <find>UPDATE</find>
       <find>Grafi</find>
@@ -95,6 +74,15 @@
       <find>Bil</find>
       <find>Yemekler</find>
       <find>Ana yemek</find>
+      <find>Bilgilerim</find>
+      <find>Tekrar</find>
+      <find>EkranTemi</find>
+      <find>Bilgi</find>
+      <find>kullanicilar1.</find>
+      <find>YetkiliBilgilerim</find>
+      <find>kullanicilar1.Yetkili</find>
+      <find>Ekran</find>
+      <find>Yurt</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -116,8 +104,8 @@
         <option value="$PROJECT_DIR$/Yurt.db" />
         <option value="$PROJECT_DIR$/PencereIslemleri.py" />
         <option value="$PROJECT_DIR$/veritabaniQT5.py" />
-        <option value="$PROJECT_DIR$/KullaniciGirisi.py" />
         <option value="$PROJECT_DIR$/GrafikIslemleri.py" />
+        <option value="$PROJECT_DIR$/KullaniciGirisi.py" />
         <option value="$PROJECT_DIR$/YurtOtomasyonu.py" />
       </list>
     </option>
@@ -283,8 +271,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.YurtOtomasyonu" />
-        <item itemvalue="Python.GrafikIslemleri" />
         <item itemvalue="Python.KullaniciGirisi" />
+        <item itemvalue="Python.GrafikIslemleri" />
         <item itemvalue="Python.girisekrani" />
         <item itemvalue="Python.OgrenciEkle" />
       </list>
@@ -465,13 +453,27 @@
       <option name="project" value="LOCAL" />
       <updated>1558429923833</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary=".">
+      <created>1558449239881</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1558449239881</updated>
+    </task>
+    <task id="LOCAL-00025" summary=".">
+      <created>1558452853492</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1558452853492</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
     <option name="totallyTimeSpent" value="790000" />
   </component>
-  <component name="TodoView" selected-index="4">
+  <component name="TodoView">
     <todo-panel id="selected-file">
       <is-autoscroll-to-source value="true" />
     </todo-panel>
@@ -482,6 +484,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-4" y="-4" width="1928" height="1044" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49421486" visible="true" weight="0.15113218" />
       <window_info id="Structure" order="1" sideWeight="0.5057851" side_tool="true" weight="0.25961033" />
@@ -492,13 +495,13 @@
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39956802" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32937366" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32937366" />
-      <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5007899" side_tool="true" weight="0.31425485" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.32937366" />
-      <window_info anchor="bottom" id="Python Console" order="12" weight="0.32937366" />
+      <window_info anchor="bottom" id="Docker" order="6" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32937366" />
+      <window_info anchor="bottom" id="Database Changes" order="8" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5007899" side_tool="true" weight="0.31425485" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.32937366" />
+      <window_info anchor="bottom" id="Python Console" order="11" weight="0.32937366" />
+      <window_info anchor="bottom" id="TODO" order="12" weight="0.32937366" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -588,30 +591,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/KullaniciGirisi.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/GrafikIslemleri.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
-          <caret line="58" column="53" lean-forward="true" selection-start-line="58" selection-start-column="53" selection-end-line="58" selection-end-column="53" />
+          <caret line="73" lean-forward="true" selection-start-line="73" selection-end-line="73" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/KullaniciGirisi.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1191">
+          <caret line="276" column="38" lean-forward="true" selection-start-line="276" selection-start-column="38" selection-end-line="276" selection-end-column="38" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/YurtOtomasyonu.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="429" column="22" lean-forward="true" selection-start-line="429" selection-start-column="22" selection-end-line="429" selection-end-column="22" />
+        <state relative-caret-position="373">
+          <caret line="581" lean-forward="true" selection-start-line="581" selection-end-line="581" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
           </folding>
