@@ -63,7 +63,7 @@ def Grafik_KarZarar():
 
 		print("Aylık toplam kazancınız:{}".format(toplam_kazanc))
 
-		# Aylık kazanılan parayı al
+		# Aylık kazanılan toplam parayı al
 		isaretci.execute("select SUM(Harcama_Miktar) FROM YurtGiderleri")
 
 		toplam_harcama = isaretci.fetchall()
@@ -79,8 +79,9 @@ def Grafik_KarZarar():
 		plt.title('Kar Zarar grafiği')
 		mavi = mpatches.Patch(color='blue', label='Gelir')
 
-		turuncu = mpatches.Patch(color='orange', label='Gider')
-		plt.legend(handles=[turuncu])
+		# turuncu = mpatches.Patch(color='orange', label='Gider')
+		# plt.legend(handles=[turuncu])
+		plt.legend(handles=[mavi])
 
 		plt.show()
 

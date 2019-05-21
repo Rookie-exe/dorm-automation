@@ -418,11 +418,10 @@ class Yurt():
             yemek_Ana2 = input("{} için Yemek 2:".format(yemek_Tarih))
             yemek_Ek = input("{} için Tatlı/Salata/İçecek:".format(yemek_Tarih))
 
-            isaretci.execute("INSERT INTO Yemekler values('{}' ,'{}', '{}', '{}', '{}')".format(yemek_Tarih, yemek_Corba,
-                                                                                              yemek_Ana, yemek_Ana2,
-                                                                                              yemek_Ek))
+            isaretci.execute("INSERT INTO Yemekler values('{}' ,'{}', '{}', '{}', '{}')".format(yemek_Tarih, yemek_Corba
+                                                                                                , yemek_Ana, yemek_Ana2
+                                                                                                , yemek_Ek))
         baglanti.commit()
-
 
     def DuyuruIslemleri(self):
         EkranTemizle()
