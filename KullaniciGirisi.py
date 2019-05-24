@@ -62,7 +62,7 @@ class Kullanicilar():
 
             giris_yap = str(input("Sisteme giriş yapmak ister misiniz?(E/H):"))
             if giris_yap == 'E' or giris_yap == 'e':
-                    kullanicilar1.OgrenciGiris()
+                    kullanicilar1.YetkiliGiris()
             else:
                 exit()
         else:
@@ -142,7 +142,7 @@ class Kullanicilar():
                     secim = input("Tekrar denemek ister misiniz? (E/H):")
 
                     if secim == 'E' or secim == 'e':
-                        Kullanicilar.YetkiliGiris(self)
+                        kullanicilar1.YetkiliGiris()
                     else:
                         break
 
@@ -279,7 +279,9 @@ class Kullanicilar():
                     sifre1 = input("Yeni şifreyi tekrar giriniz:")
 
                 # Verileri güncelleme
-                    isaretci.execute("UPDATE yetkililer SET ad = ?, soyad = ?, kullaniciadi = ?, sifre = ? WHERE ROWID = ?",
+                    isaretci.execute("UPDATE yetkililer "
+                                     "SET ad = ?, soyad = ?, kullaniciadi = ?, sifre = ? "
+                                     "WHERE ROWID = ?",
                                      (ad, soyad, yetkili_kullaniciadi, sifre, satir_no))
 
                 baglanti.commit()
