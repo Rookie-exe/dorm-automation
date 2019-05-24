@@ -466,8 +466,6 @@ class Yurt():
 
     def YetkiliBilgileriGuncelle(self):
 
-        EkranTemizle()
-
         kullanicilar1.YetkiliBilgilerimiGuncelle()
 
     def ArayuzYurt(self):

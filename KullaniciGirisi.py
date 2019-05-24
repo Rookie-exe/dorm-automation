@@ -26,7 +26,7 @@ class Kullanicilar():
 
                 yetkili_kullaniciadi = input("Bir kullanıcı adı oluşturunuz:")
 
-                k_bul = ("SELECT * FROM yetkililer WHERE kullaniciadi=?")
+                k_bul = "SELECT * FROM yetkililer WHERE kullaniciadi=?"
                 isaretci.execute(k_bul, [(yetkili_kullaniciadi)])
 
                 if isaretci.fetchall():  # True değer dönerse böyle bir kadi oldugunu bulmus olucaz
@@ -180,7 +180,6 @@ class Kullanicilar():
                 else:
                     break
 
-
     def OgrenciBilgilerim(self):
 
         global ogrenci_sonuclar
@@ -253,7 +252,7 @@ class Kullanicilar():
         yetkili_satir = isaretci.fetchall()
 
         for i in yetkili_satir:     # yetkili_satir liste olarak geldiği için liste biçiminden çıkarttık
-            for j in i:
+            for satir_no in i:
 
                 while bulundu == 0:
 
@@ -281,7 +280,7 @@ class Kullanicilar():
 
                 # Verileri güncelleme
                     isaretci.execute("UPDATE yetkililer SET ad = ?, soyad = ?, kullaniciadi = ?, sifre = ? WHERE ROWID = ?",
-                                     (ad, soyad, yetkili_kullaniciadi, sifre, j))
+                                     (ad, soyad, yetkili_kullaniciadi, sifre, satir_no))
 
                 baglanti.commit()
 
